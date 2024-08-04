@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Sharp-Bold";
+  src: url("/public/fonts/sharp-sans-bold.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sharp-SemiBold";
+  src: url("/public/fonts/sharp-sans-semibold.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
+}
+.main {
+  background-color: #555555;
+}
