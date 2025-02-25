@@ -12,7 +12,9 @@
             class="pt-md-10 mb-5"
           >
             <div class="d-flex justify-space-between">
-              <p class="manrope-Bold-h4 font-weight-bold">{{ experience.title }}</p>
+              <p class="manrope-Bold-h4 font-weight-bold">
+                {{ experience.title }}
+              </p>
               <p class="manrope-regular-h5">{{ experience.dates }}</p>
             </div>
             <p class="text-justify pt-5 manrope-regular-h5">
@@ -59,7 +61,7 @@ const experiences = [
 }
 
 .main {
-  background-image: url("images/meteor.svg");
+  background-image: url("images/meteor.png");
   background-size: cover;
 }
 </style>

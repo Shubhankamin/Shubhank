@@ -53,7 +53,7 @@
 }
 
 .main {
-  background-image: url("images/meteor.svg");
+  background-image: url("images/meteor.png");
   background-size: cover;
 }
 </style>

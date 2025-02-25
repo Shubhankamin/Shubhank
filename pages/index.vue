@@ -42,7 +42,7 @@ const loading = ref(true); // Initial state for loading
 
 onMounted(() => {
   const img = new Image();
-  img.src = "images/meteor.svg";
+  img.src = "images/meteor.png";
 
   img.onload = () => {
     loading.value = false;
@@ -66,7 +66,7 @@ onMounted(() => {
 }
 
 .main {
-  background-image: url("images/meteor.svg");
+  background-image: url("images/meteor.png");
   background-size: cover;
   background-position: center;
 }
