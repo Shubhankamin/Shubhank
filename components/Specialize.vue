@@ -13,6 +13,7 @@
             :key="index"
             cols="12"
             md="4"
+            sm="6"
             class="d-flex justify-center"
           >
             <div class="flip-card cursor-pointer">

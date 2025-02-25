@@ -29,7 +29,8 @@
     <Hero class="mt-10 mt-md-0" />
     <Projects id="work" />
     <Specialize id="spcialize" />
-    <Education />
+    <!-- <Education /> -->
+    <Project-1 />
     <About id="about" />
     <Connect id="connect" />
   </div>

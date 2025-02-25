@@ -17,18 +17,20 @@
               crafting seamless and engaging web experiences.
             </p>
             <p class="pt-2 manrope-regular-h5">
-              Currently working at **Exelon Circuits Private Limited** as a
-              Front-End Developer, I also take on exciting freelance projects,
-              helping businesses and individuals bring their digital ideas to
-              life. With a strong foundation in modern web technologies, I have
-              worked with **Nuxt.js, Vue.js, React.js, Next.js, FlutterFlow,
-              React Native, Supabase, Figma, Canva, and core web technologies
-              like HTML, CSS, and JavaScript**. I am deeply interested in UI/UX
-              design and always strive to create user-friendly, accessible, and
-              high-performance applications. Outside of coding, I enjoy
-              exploring new tech trends, refining my design skills, and taking
-              on creative challenges.
+              I have previously worked in a startup environment, where I honed
+              my skills in modern web technologies and gained hands-on
+              experience in building scalable and high-performance applications.
+              My expertise includes
+              <strong
+                >Nuxt.js, Vue.js, React.js, Next.js, FlutterFlow, React Native,
+                Supabase, Figma, Canva, and core web technologies like HTML,
+                CSS, and JavaScript</strong
+              >. I am passionate about UI/UX design and always strive to create
+              intuitive, user-friendly, and accessible web experiences. Beyond
+              coding, I enjoy exploring new tech trends, refining my design
+              skills, and taking on creative challenges.
             </p>
+
             <NuxtLink to="/about" class="link pointer">
               <p class="link mt-md-10 my-5 manrope-regular-h5">More About Me</p>
             </NuxtLink>

@@ -9,7 +9,7 @@
       <div data-aos="fade-up" data-aos-duration="3000">
         <v-row class="px-md-14">
           <v-col cols="12" md="6">
-            <h1 class="heading bebas-Bold-h1">EDUCATION</h1>
+            <h1 class="heading bebas-Bold-h1">PROJECTS</h1>
           </v-col>
         </v-row>
         <v-row class="d-none d-md-block">
@@ -17,21 +17,19 @@
             <v-timeline align="start">
               <!-- Timeline item for 1960 -->
               <v-timeline-item dot-color="#d3f576" size="small">
-                <template v-slot:opposite>
-                  <div>2018</div>
-                </template>
-                <div>
-                  <p class="bebas-Bold-h3">SSLC</p>
-                </div>
+                <template v-slot:opposite> </template>
+
                 <div class="card mt-5">
                   <div class="card-content">
                     <p class="card-title manrope-Bold-h4">
-                      SMS ENGLISH MEDIUM SCHOOL
+                      FASTMECH MOBILE APP
                     </p>
                     <p class="card-para manrope-regular-h5">
-                      SMS English Medium School is a reputed institution located
-                      in Brahmavar. I completed my SSLC board examination here
-                      with an impressive **88.88%**.
+                      Fastmech is an Android app built with
+                      <strong>FlutterFlow</strong> and
+                      <strong>Firebase</strong>. It enables users to book
+                      vehicle servicing, make payments, and opt for pick-up and
+                      delivery
                     </p>
                   </div>
                 </div>
@@ -39,19 +37,14 @@
 
               <!-- Timeline item for 1970 -->
               <v-timeline-item dot-color="#d3f576" size="small">
-                <template v-slot:opposite>
-                  <div>2020</div>
-                </template>
-                <div>
-                  <p class="bebas-Bold-h3 left-text">PRE-UNIVERSITY</p>
-                </div>
+                <template v-slot:opposite> </template>
+
                 <div class="card left-card">
                   <div class="card-content">
-                    <p class="card-title manrope-Bold-h4">MGM PU COLLEGE</p>
+                    <p class="card-title manrope-Bold-h4">NEWS WEBSITE</p>
                     <p class="card-para manrope-regular-h5">
-                      MGM PU College is a well-known institution located in
-                      Udupi. I pursued **Commerce with Computer Science** here
-                      and successfully completed my PU education with **83%**.
+                      Developed a news website that fetches and displays
+                      real-time news using the <strong>NewsAPI.org</strong> API.
                     </p>
                   </div>
                 </div>
@@ -59,20 +52,15 @@
 
               <!-- Timeline item for 1980 -->
               <v-timeline-item dot-color="#d3f576" size="small">
-                <template v-slot:opposite>
-                  <div>2023</div>
-                </template>
-                <div>
-                  <p class="bebas-Bold-h3">BACHELOR'S</p>
-                </div>
+                <template v-slot:opposite> </template>
+
                 <div class="card mt-5">
                   <div class="card-content">
-                    <p class="card-title manrope-Bold-h4">MGM COLLEGE</p>
+                    <p class="card-title manrope-Bold-h4">TIC TAC TOE GAME</p>
                     <p class="card-para manrope-regular-h5">
-                      MGM College is a renowned institution located in Udupi. I
-                      pursued a **Bachelor of Computer Applications (BCA)** here
-                      and successfully completed the course with a **CGPA of
-                      8.62**.
+                      Developed a <strong>Tic-Tac-Toe</strong> game using HTML,
+                      CSS, and JavaScript, implementing game logic and an
+                      interactive UI for a seamless experience.
                     </p>
                   </div>
                 </div>
@@ -80,52 +68,40 @@
             </v-timeline>
           </v-col>
         </v-row>
-        <v-row class="d-block d-md-none">
-          <v-col cols="12" class="mt-5">
-            <div>
-              <p class="bebas-Bold-h3 mb-2">SSLC - 2018</p>
-            </div>
+        <v-row class="d-block d-md-none ">
+          <v-col cols="12" class="mt-5 d-flex justify-center">
             <div class="card">
               <div class="card-content">
-                <p class="card-title manrope-Bold-h4">
-                  SMS ENGLISH MEDIUM SCHOOL
-                </p>
+                <p class="card-title manrope-Bold-h4">FASTMECH MOBILE APP</p>
                 <p class="card-para manrope-regular-h5">
-                  SMS English Medium School is a reputed institution located in
-                  Brahmavar. I completed my SSLC board examination here with an
-                  impressive **88.88%**.
+                  Fastmech is an Android app built with
+                  <strong>FlutterFlow</strong> and <strong>Firebase</strong>. It
+                  enables users to book vehicle servicing, make payments, and
+                  opt for pick-up and delivery
                 </p>
               </div>
             </div>
           </v-col>
-          <v-col cols="12" class="mt-5">
-            <div>
-              <p class="bebas-Bold-h3 mb-2">PRE-UNIVERSITY - 2020</p>
-            </div>
+          <v-col cols="12" class="mt-5 d-flex justify-center">
             <div class="card">
               <div class="card-content">
-                <p class="card-title manrope-Bold-h4">MGM PU COLLEGE</p>
+                <p class="card-title manrope-Bold-h4">NEWS WEBSITE</p>
 
                 <p class="card-para manrope-regular-h5">
-                  MGM PU College is a well-known institution located in Udupi. I
-                  pursued **Commerce with Computer Science** here and
-                  successfully completed my PU education with **83%**.
+                  Developed a news website that fetches and displays real-time
+                  news using the <strong>NewsAPI.org</strong> API.
                 </p>
               </div>
             </div>
           </v-col>
-          <v-col cols="12" class="mt-5">
-            <div>
-              <p class="bebas-Bold-h3 mb-2">BACHELOR'S - 2023</p>
-            </div>
-            <div class="card">
+          <v-col cols="12" class="mt-5 d-flex justify-center">
+            <div class="card mt-5">
               <div class="card-content">
-                <p class="card-title manrope-Bold-h4">MGM COLLEGE</p>
-
+                <p class="card-title manrope-Bold-h4">TIC TAC TOE GAME</p>
                 <p class="card-para manrope-regular-h5">
-                  MGM College is a renowned institution located in Udupi. I
-                  pursued a **Bachelor of Computer Applications (BCA)** here and
-                  successfully completed the course with a **CGPA of 8.62**.
+                  Developed a <strong>Tic-Tac-Toe</strong> game using HTML, CSS,
+                  and JavaScript, implementing game logic and an interactive UI
+                  for a seamless experience.
                 </p>
               </div>
             </div>
@@ -150,8 +126,10 @@
 }
 
 .main {
-  background-image: url("images/meteor.svg");
+  background-image: url("/images/meteor.png");
   background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .timeline-line {
