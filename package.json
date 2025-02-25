@@ -4,15 +4,26 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "aos": "^2.3.4",
+    "aos-vue": "^0.0.5",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "gsap": "^3.12.5",
+    "mouse-follower": "^1.1.2",
+    "nodemailer": "^6.9.14",
     "nuxt": "^3.12.4",
-    "vue": "latest"
+    "nuxt-aos": "^1.2.5",
+    "nuxt-mail": "^5.0.1",
+    "vue": "latest",
+    "vue-tel-input": "^9.1.4"
   },
   "devDependencies": {
     "vite-plugin-vuetify": "^2.0.3",
