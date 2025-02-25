@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <v-container fluid class="main pt-md-16">
       <v-row class="mt-md-14 mt-3" data-aos="fade-up" data-aos-duration="3000">
         <v-col cols="12" md="6" class="pt-md-16 pt-md-7">
@@ -10,8 +10,11 @@
             </div>
             <div class="d-flex justify-center pr-5 pt-2">
               <p class="text-white manrope-regular-h5">
-                A Sydney based front-end developer passionate about building
-                accessible and user friendly websites.
+                I am a passionate Front-End Developer with a Bachelor's in
+                Computer Applications (BCA) and experience in building dynamic,
+                high-performance web applications. I specialize in Nuxt 3, Vue
+                3, HTML, CSS, JavaScript, and Supabase, with a strong eye for
+                design using Figma.
               </p>
             </div>
             <div class="contact-section pt-10">
@@ -41,8 +44,10 @@
           </div>
         </v-col>
         <v-col cols="12" md="6" class="pt-10 pt-md-0">
-          <div class="bg-grey">
-            <v-img src="/images/me.jpg" class="profile" cover> </v-img>
+          <div>
+            <v-img src="/images/me.jpg" class="profile d-none d-md-block" height="550"  > </v-img>
+            <v-img src="/images/me.jpg" class="profile d-block d-md-none" height="550"  > </v-img>
+
           </div>
         </v-col>
       </v-row>
@@ -81,9 +86,7 @@
   display: flex;
   align-items: center;
   color: black;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact-button:hover {
