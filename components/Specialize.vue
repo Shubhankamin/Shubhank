@@ -15,7 +15,7 @@
             md="4"
             class="d-flex justify-center"
           >
-            <div class="flip-card">
+            <div class="flip-card cursor-pointer">
               <div class="flip-card-inner">
                 <div
                   class="flip-card-front"

@@ -27,22 +27,26 @@
     <Nav />
     <v-container fluid class="px-md-15 pt-16 pt-md-16 mt-md-5">
       <v-row class="pt-md-10 pt-5">
-        <v-col cols="12" md="6">
-          <p class="heading bebas-Bold-h1 text-white">ABOUT ME</p>
+        <v-col cols="12" md="6" class="">
+          <h1 class="heading bebas-Bold-h1 text-white">ABOUT ME</h1>
         </v-col>
-        <v-col cols="12" md="6" class="pt-md-5">
+        <v-col cols="12" md="6" class="pt-md-5 pb-10">
           <p class="content manrope-regular-h4 text-white">
-            I am a front-end developer based in Sydney. Has Mechanical
-            Engineering background.
+            I am a Front-End Developer based in Udupi, passionate about crafting
+            seamless and engaging web experiences.
           </p>
           <p class="pt-2 text-justify manrope-regular-h5 text-white">
-            I am a front-end developer based in Sydney looking for exciting
-            opportunities. Has Mechanical Engineering background. Likes to focus
-            on accessibility when developing. Passionate and curious about
-            solving problems. Currently, I’m exploring Reactjs, Webflow and a
-            bit of Designing. While I am not programming, I enjoy playing
-            football, photography and playing Valorant. Learning more to improve
-            skill.
+            Currently working at **Exelon Circuits Private Limited** as a
+            Front-End Developer, I also take on exciting freelance projects,
+            helping businesses and individuals bring their digital ideas to
+            life. With a strong foundation in modern web technologies, I have
+            worked with **Nuxt.js, Vue.js, React.js, Next.js, FlutterFlow, React
+            Native, Supabase, Figma, Canva, and core web technologies like HTML,
+            CSS, and JavaScript**. I am deeply interested in UI/UX design and
+            always strive to create user-friendly, accessible, and
+            high-performance applications. Outside of coding, I enjoy exploring
+            new tech trends, refining my design skills, and taking on creative
+            challenges.
           </p>
           <div class="align-center pt-10 ga-4 d-none d-md-flex">
             <button
@@ -88,13 +92,13 @@
           </div>
         </v-col>
       </v-row>
-      <v-row class="mb-md-10">
+      <!-- <v-row class="mb-md-10">
         <v-col class="px-md-16 px-4">
           <v-img src="/images/person-2.png"></v-img>
         </v-col>
-      </v-row>
+      </v-row> -->
       <Capability />
-      <Experience class="text-white"/>
+      <Experience class="text-white" />
       <Connect />
     </v-container>
   </div>
@@ -139,9 +143,7 @@ const downloadResume = () => {
   display: flex;
   align-items: center;
   color: black;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main {

@@ -1,5 +1,5 @@
 <template>
-  <div class="main text-white">
+  <div class="main text-white pt-5">
     <v-container fluid>
       <v-row>
         <v-col cols="12" md="6">
@@ -33,6 +33,9 @@ const skills = [
   { name: "JavaScript", icon: "mdi-language-javascript" },
   { name: "Vue 3", icon: "mdi-vuejs" },
   { name: "Nuxt 3", icon: "mdi-nuxt" },
+  { name: "React ", icon: "mdi-react" },
+  { name: "Tailwind CSS ", icon: "mdi-tailwind" },
+
   { name: "Vuetify", icon: "mdi-vuetify" },
   { name: "Python", icon: "mdi-language-python" },
 ];

@@ -13,17 +13,21 @@
           </v-col>
           <v-col cols="12" md="6" class="pt-5 px-2">
             <p class="content manrope-Bold-h4">
-              I am a front-end developer based in Sydney. Has Mechanical
-              Engineering background.
+              I am a Front-End Developer based in Udupi, passionate about
+              crafting seamless and engaging web experiences.
             </p>
             <p class="pt-2 manrope-regular-h5">
-              I am a front-end developer based in Sydney looking for exciting
-              opportunities. Has Mechanical Engineering background. Likes to
-              focus on accessibility when developing. Passionate and curious
-              about solving problems. Currently, I’m exploring Reactjs, Webflow
-              and a bit of Designing. While I am not programming, I enjoy
-              playing football, photography and playing Valorant. Learning more
-              to improve skill.
+              Currently working at **Exelon Circuits Private Limited** as a
+              Front-End Developer, I also take on exciting freelance projects,
+              helping businesses and individuals bring their digital ideas to
+              life. With a strong foundation in modern web technologies, I have
+              worked with **Nuxt.js, Vue.js, React.js, Next.js, FlutterFlow,
+              React Native, Supabase, Figma, Canva, and core web technologies
+              like HTML, CSS, and JavaScript**. I am deeply interested in UI/UX
+              design and always strive to create user-friendly, accessible, and
+              high-performance applications. Outside of coding, I enjoy
+              exploring new tech trends, refining my design skills, and taking
+              on creative challenges.
             </p>
             <NuxtLink to="/about" class="link pointer">
               <p class="link mt-md-10 my-5 manrope-regular-h5">More About Me</p>

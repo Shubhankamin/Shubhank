@@ -23,15 +23,15 @@
                 <div>
                   <p class="bebas-Bold-h3">SSLC</p>
                 </div>
-                <div class="card">
+                <div class="card mt-5">
                   <div class="card-content">
                     <p class="card-title manrope-Bold-h4">
                       SMS ENGLISH MEDIUM SCHOOL
                     </p>
                     <p class="card-para manrope-regular-h5">
-                      In the 1960s, the world saw the beginning of the tech
-                      revolution, with significant advancements in computing and
-                      telecommunications.
+                      SMS English Medium School is a reputed institution located
+                      in Brahmavar. I completed my SSLC board examination here
+                      with an impressive **88.88%**.
                     </p>
                   </div>
                 </div>
@@ -49,9 +49,9 @@
                   <div class="card-content">
                     <p class="card-title manrope-Bold-h4">MGM PU COLLEGE</p>
                     <p class="card-para manrope-regular-h5">
-                      The 1970s brought about a surge in environmental
-                      awareness, leading to the first Earth Day and a push for
-                      sustainable living.
+                      MGM PU College is a well-known institution located in
+                      Udupi. I pursued **Commerce with Computer Science** here
+                      and successfully completed my PU education with **83%**.
                     </p>
                   </div>
                 </div>
@@ -65,13 +65,14 @@
                 <div>
                   <p class="bebas-Bold-h3">BACHELOR'S</p>
                 </div>
-                <div class="card">
+                <div class="card mt-5">
                   <div class="card-content">
                     <p class="card-title manrope-Bold-h4">MGM COLLEGE</p>
                     <p class="card-para manrope-regular-h5">
-                      The 1980s marked the start of the digital era, with
-                      personal computers becoming mainstream and the internet in
-                      its infancy.
+                      MGM College is a renowned institution located in Udupi. I
+                      pursued a **Bachelor of Computer Applications (BCA)** here
+                      and successfully completed the course with a **CGPA of
+                      8.62**.
                     </p>
                   </div>
                 </div>
@@ -90,9 +91,9 @@
                   SMS ENGLISH MEDIUM SCHOOL
                 </p>
                 <p class="card-para manrope-regular-h5">
-                  In the 1960s, the world saw the beginning of the tech
-                  revolution, with significant advancements in computing and
-                  telecommunications.
+                  SMS English Medium School is a reputed institution located in
+                  Brahmavar. I completed my SSLC board examination here with an
+                  impressive **88.88%**.
                 </p>
               </div>
             </div>
@@ -106,9 +107,9 @@
                 <p class="card-title manrope-Bold-h4">MGM PU COLLEGE</p>
 
                 <p class="card-para manrope-regular-h5">
-                  The 1970s brought about a surge in environmental awareness,
-                  leading to the first Earth Day and a push for sustainable
-                  living.
+                  MGM PU College is a well-known institution located in Udupi. I
+                  pursued **Commerce with Computer Science** here and
+                  successfully completed my PU education with **83%**.
                 </p>
               </div>
             </div>
@@ -122,8 +123,9 @@
                 <p class="card-title manrope-Bold-h4">MGM COLLEGE</p>
 
                 <p class="card-para manrope-regular-h5">
-                  The 1980s marked the start of the digital era, with personal
-                  computers becoming mainstream and the internet in its infancy.
+                  MGM College is a renowned institution located in Udupi. I
+                  pursued a **Bachelor of Computer Applications (BCA)** here and
+                  successfully completed the course with a **CGPA of 8.62**.
                 </p>
               </div>
             </div>
