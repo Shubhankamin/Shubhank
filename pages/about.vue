@@ -37,19 +37,18 @@
             seamless and engaging web experiences.
           </p>
           <p class="pt-2 text-justify manrope-regular-h5 text-white">
-            Currently working at
-            <strong>Exelon Circuits Private Limited</strong> as a Front-End
-            Developer, I also take on exciting freelance projects, helping
-            businesses and individuals bring their digital ideas to life. With a
-            strong foundation in modern web technologies, I have worked with
+            I have previously worked in a startup environment, where I honed my
+            skills in modern web technologies and gained hands-on experience in
+            building scalable and high-performance applications. My expertise
+            includes
             <strong
               >Nuxt.js, Vue.js, React.js, Next.js, FlutterFlow, React Native,
               Supabase, Figma, Canva, and core web technologies like HTML, CSS,
               and JavaScript</strong
-            >. I am deeply interested in UI/UX design and always strive to
-            create user-friendly, accessible, and high-performance applications.
-            Outside of coding, I enjoy exploring new tech trends, refining my
-            design skills, and taking on creative challenges.
+            >. I am passionate about UI/UX design and always strive to create
+            intuitive, user-friendly, and accessible web experiences. Beyond
+            coding, I enjoy exploring new tech trends, refining my design
+            skills, and taking on creative challenges.
           </p>
           <div class="align-center pt-10 ga-4 d-none d-md-flex">
             <button
@@ -75,7 +74,7 @@
               </a>
             </div>
           </div>
-           <div class="align-center pt-10 ga-4 d-block d-md-none">
+          <div class="align-center pt-10 ga-4 d-block d-md-none">
             <button
               class="contact-button py-1 px-6 manrope-Bold-h5"
               @click="downloadResume"
