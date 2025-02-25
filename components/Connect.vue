@@ -8,8 +8,7 @@
       >
         <v-col cols="12" md="6">
           <p class="heading text-white bebas-Bold-h1">Let’s connect</p>
-          <p class="manrope-regular-h5">Say hello at robertgarcia@gmail.com</p>
-          <p class="manrope-regular-h5">For more info, here’s my resume</p>
+          <p class="manrope-regular-h5">Say hello at aminshubhank@gmail.com</p>
           <ul class="example-2 pt-10">
             <li class="icon-content">
               <a
