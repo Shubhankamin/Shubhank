@@ -89,7 +89,7 @@ const loading = ref(true); // Initial state for loading
 
 onMounted(() => {
   const img = new Image();
-  img.src = "images/meteor.png"; // Path to your background image
+  img.src = "/images/meteor.png"; // Path to your background image
 
   img.onload = () => {
     loading.value = false;
@@ -131,7 +131,7 @@ const downloadResume = () => {
 }
 
 .main {
-  background-image: url("images/meteor.png");
+  background-image: url("/images/meteor.png");
   background-size: cover;
   background-position: center;
   height: 100%;
