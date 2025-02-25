@@ -63,7 +63,7 @@
             </li>
           </ul>
         </v-col>
-        <v-col cols="12" md="6" class="pr-md-10">
+        <v-col cols="12" md="6" class="pr-md-10 d-none d-md-block">
           <form
             action="https://formsubmit.co/shubhankamin20@gmail.com"
             method="POST"
@@ -103,6 +103,57 @@
 
               <textarea
                 class="input w-75"
+                placeholder="Message"
+                name="message"
+              />
+            </div>
+            <input type="hidden" name="_captcha" value="false" />
+            <button class="submit py-2 px-12 my-10 manrope-Bold-h5">
+              Submit
+            </button>
+          </form>
+        </v-col>
+
+         <v-col cols="12" md="6" class="px-5 d-block d-md-none">
+          <form
+            action="https://formsubmit.co/shubhankamin20@gmail.com"
+            method="POST"
+          >
+            <div>
+              <p class="pb-5">Name</p>
+
+              <input
+                placeholder="Enter your Name"
+                class="input w-100 py-1"
+                type="text"
+                name="name"
+              />
+            </div>
+            <div>
+              <p class="py-5">Email</p>
+
+              <input
+                class="input w-100 py-1"
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+              />
+            </div>
+            <div>
+              <p class="py-5">Subject</p>
+
+              <input
+                class="input w-100 py-1"
+                type="email"
+                placeholder=" Enter Subject"
+                name="email"
+              />
+            </div>
+            <div>
+              <p class="py-5">Message</p>
+
+              <textarea
+                class="input w-100"
                 placeholder="Message"
                 name="message"
               />
