@@ -1,5 +1,5 @@
 <template>
-  <div class="fullscreen-container " v-if="loading">
+  <div class="fullscreen-container" v-if="loading">
     <div class="loader">
       <div class="box box-1">
         <div class="side-left"></div>
@@ -23,6 +23,7 @@
       </div>
     </div>
   </div>
+
   <div v-else class="main">
     <Nav />
     <Hero class="mt-10 mt-md-0" />
@@ -33,18 +34,27 @@
     <Connect id="connect" />
   </div>
 </template>
+
 <script setup>
 import { onMounted, ref } from "vue";
 
 const loading = ref(true); // Initial state for loading
 
-// Simulate loading completion
 onMounted(() => {
+  const img = new Image();
+  img.src = "images/meteor.svg";
+
+  img.onload = () => {
+    loading.value = false;
+  };
+
+  // Fallback: If image takes too long, hide loader after 5s
   setTimeout(() => {
     loading.value = false;
-  }, 3000); // Simulates a 3-second loading delay
+  }, 5000);
 });
 </script>
+
 <style scoped>
 .fullscreen-container {
   display: flex;
@@ -58,6 +68,7 @@ onMounted(() => {
 .main {
   background-image: url("images/meteor.svg");
   background-size: cover;
+  background-position: center;
 }
 
 /* Loader scaling */
