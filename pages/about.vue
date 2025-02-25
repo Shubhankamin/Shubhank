@@ -134,6 +134,8 @@ const downloadResume = () => {
   background-image: url("images/meteor.png");
   background-size: cover;
   background-position: center;
+  height: 100%;
+  width: 100%;
 }
 
 .contact-button:hover {

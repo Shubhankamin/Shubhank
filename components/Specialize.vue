@@ -69,6 +69,8 @@ const cardData = [
 .main {
   background-image: url("images/meteor.png");
   background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .title {
