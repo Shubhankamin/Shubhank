@@ -62,12 +62,38 @@
               <a
                 href="https://www.linkedin.com/in/shubhank-amin-a7b231225/"
                 target="_blank"
+                style="text-decoration: none"
               >
                 <v-icon class="icon linkedin">mdi-linkedin</v-icon>
               </a>
               <a
                 href="https://github.com/Shubhankamin?tab=repositories"
                 target="_blank"
+                style="text-decoration: none"
+              >
+                <v-icon class="icon github">mdi-github</v-icon>
+              </a>
+            </div>
+          </div>
+           <div class="align-center pt-10 ga-4 d-block d-md-none">
+            <button
+              class="contact-button py-1 px-6 manrope-Bold-h5"
+              @click="downloadResume"
+            >
+              Download Resume <span class="dot"></span>
+            </button>
+            <div class="icons pt-5">
+              <a
+                href="https://www.linkedin.com/in/shubhank-amin-a7b231225/"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <v-icon class="icon linkedin">mdi-linkedin</v-icon>
+              </a>
+              <a
+                href="https://github.com/Shubhankamin?tab=repositories"
+                target="_blank"
+                style="text-decoration: none"
               >
                 <v-icon class="icon github">mdi-github</v-icon>
               </a>

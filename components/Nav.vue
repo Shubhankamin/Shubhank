@@ -75,7 +75,7 @@
                   <v-img
                     src="/images/logo-2.png"
                     class="logo"
-                    @click="downloadPDF"
+                    @click="goToHome"
                   />
                 </div>
                 <div class="px-4 pt-2 d-flex flex-column ga-5">
@@ -119,6 +119,9 @@
                   >
                     <p class="manrope-regular-h4">CONTACT</p>
                   </NuxtLink>
+                  <p class="manrope-regular-h4" @click="downloadPDF">
+                    DOWNLOAD RESUME
+                  </p>
                 </div>
               </v-col>
             </v-row>
@@ -130,7 +133,7 @@
 </template>
 <script setup>
 const drawer = ref(false);
-
+const router = useRouter();
 const openDrawer = () => {
   drawer.value = true;
 };
@@ -140,6 +143,10 @@ const downloadPDF = () => {
   link.href = "/files/resume.pdf"; // Replace with your actual PDF file path
   link.download = "Shubhank's Resume.pdf"; // Set the filename for the download
   link.click();
+};
+
+const goToHome = () => {
+  router.push("/");
 };
 </script>
 
