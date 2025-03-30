@@ -48,12 +48,14 @@
             <v-img
               src="/images/me-new.PNG"
               class="profile d-none d-md-block"
+              lazy-src="/images/me-resized-new-1.png"
               height="550"
             >
             </v-img>
             <v-img
               src="/images/me-new.PNG"
               class="profile d-block d-md-none"
+              lazy-src="/images/me-resized-new-1.png"
               height="550"
             >
             </v-img>

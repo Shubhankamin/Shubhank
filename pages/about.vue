@@ -102,7 +102,10 @@
       </v-row>
       <v-row class="justify-center mb-5">
         <v-col cols="12" md="10">
-          <v-img src="/images/me-new-3.PNG"></v-img>
+          <v-img
+            src="/images/me-new-3.PNG"
+            lazy-src="/images/me-resized-2.png"
+          ></v-img>
         </v-col>
       </v-row>
       <Capability />
