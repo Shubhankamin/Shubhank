@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container fluid class="main pt-md-16">
-      <v-row class="mt-md-14 mt-3 " data-aos="fade-up" data-aos-duration="3000">
+      <v-row class="mt-md-14 mt-3" data-aos="fade-up" data-aos-duration="3000">
         <v-col cols="12" md="6" sm="6" class="pt-md-16 pt-md-7">
           <div class="px-md-16">
             <div class="pt-md-14 d-flex flex-column justify-center">
@@ -46,13 +46,13 @@
         <v-col cols="12" md="6" sm="6" class="pt-10 pt-sm-0 pt-md-0">
           <div>
             <v-img
-              src="/images/me.jpg"
+              src="/images/me-new.PNG"
               class="profile d-none d-md-block"
               height="550"
             >
             </v-img>
             <v-img
-              src="/images/me.jpg"
+              src="/images/me-new.PNG"
               class="profile d-block d-md-none"
               height="550"
             >
