@@ -53,7 +53,7 @@
   font-display: swap;
 }
 
-@media (max-width: 1640px) {
+@media (max-width: 2560px) {
   .bebas-Bold-h1 {
     font-family: Bebas;
     font-weight: 500;

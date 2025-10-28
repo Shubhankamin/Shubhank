@@ -10,11 +10,12 @@
             </div>
             <div class="d-flex justify-center pr-5 pt-2">
               <p class="text-white manrope-regular-h5">
-                I am a passionate Front-End Developer with a Bachelor's in
-                Computer Applications (BCA) and experience in building dynamic,
-                high-performance web applications. I specialize in Nuxt 3, Vue
-                3, HTML, CSS, JavaScript, and Supabase, with a strong eye for
-                design using Figma.
+                I’m a passionate Front-End Developer currently pursuing my MCA at MIT
+                Manipal. I specialize in building high-performance web
+                applications using Nuxt 3, Vue 3, HTML, CSS, and JavaScript. My
+                technical toolkit also includes Firebase, Supabase, PHP, XAMPP,
+                C++, and MySQL, complemented by a strong sense of design refined
+                through Figma.
               </p>
             </div>
             <div class="contact-section pt-10">

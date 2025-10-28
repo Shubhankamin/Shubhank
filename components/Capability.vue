@@ -33,11 +33,13 @@ const skills = [
   { name: "JavaScript", icon: "mdi-language-javascript" },
   { name: "Vue 3", icon: "mdi-vuejs" },
   { name: "Nuxt 3", icon: "mdi-nuxt" },
-  { name: "React ", icon: "mdi-react" },
-  { name: "Tailwind CSS ", icon: "mdi-tailwind" },
-
+  { name: "React", icon: "mdi-react" },
+  { name: "Tailwind CSS", icon: "mdi-tailwind" },
   { name: "Vuetify", icon: "mdi-vuetify" },
   { name: "Python", icon: "mdi-language-python" },
+  { name: "C++", icon: "mdi-language-cpp" },
+  { name: "MySQL", icon: "mdi-database" },
+  { name: "PHP", icon: "mdi-language-php" },
 ];
 </script>
 <style scoped>

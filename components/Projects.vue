@@ -121,5 +121,37 @@ const projects = [
     liveDemo: "https://mymadamji.netlify.app/",
     github: "https://github.com/Shubhankamin/Madam-Ji",
   },
+
+  {
+    src: "/images/project-3.jpg",
+    title: "AgriMart E-commerce Website",
+    description:
+      "Agri Mart — Role-Based eCommerce Website Developed a fully functional eCommerce platform connecting Farmers and Customers using pure HTML, CSS, and JavaScript. Implemented role-based access, a complete shopping flow, and data persistence using Local Storage, Cookies, IndexedDB, and data.js, all without a backend. Ensured WCAG 2.1 AA accessibility compliance, emphasizing performance, usability, and clean client-side architecture.",
+    year: "2025",
+    role: "Front-End Developer",
+    liveDemo: "https://agrimaart.netlify.app",
+    github: "https://github.com/Shubhankamin/Agri_Mart",
+  },
+
+  {
+    src: "/images/project-4.jpg",
+    title: "Lost & Found Management Portal",
+    description:
+      "Lost or Found — College Lost & Found Management Portal Developed a web-based portal for students to report and claim lost items within the campus. Built with Vue 3, Nuxt 3, and Vuetify, featuring a dedicated admin panel for the security department to manage users and item listings. Integrated Firebase for backend services including authentication, real-time database, and storage. Currently in the development and deployment proposal phase for college-wide implementation.",
+    year: "2025",
+    role: "Full Stack Developer",
+    liveDemo: "https://lostorfound.netlify.app",
+    github: "https://github.com/Shubhankamin/Find",
+  },
+  {
+    src: "/images/project-5.jpg",
+    title: "Lost & Found Management Admin Portal",
+    description:
+      "Lost or Found — College Lost & Found Management Portal Developed a web-based portal for students to report and claim lost items within the campus. Built with Vue 3, Nuxt 3, and Vuetify, featuring a dedicated admin panel for the security department to manage users and item listings. Integrated Firebase for backend services including authentication, real-time database, and storage. Currently in the development and deployment proposal phase for college-wide implementation.",
+    year: "2025",
+    role: "Full Stack Developer",
+    // liveDemo: "https://lostorfound.netlify.app",
+    github: "https://github.com/Shubhankamin/Find-Admin",
+  },
 ];
 </script>

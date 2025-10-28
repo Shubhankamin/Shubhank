@@ -65,10 +65,26 @@
                   </div>
                 </div>
               </v-timeline-item>
+
+              <v-timeline-item dot-color="#d3f576" size="small">
+                <template v-slot:opposite> </template>
+
+                <div class="card left-card">
+                  <div class="card-content">
+                    <p class="card-title manrope-Bold-h4">AGRIMART WEBSITE</p>
+                    <p class="card-para manrope-regular-h5">
+                      Developed a e-commerce website where customer can buy
+                      products directly from farmers and farmers can sell their
+                      products using HTML, CSS , JS and LOCAL STORAGE and
+                      INDEXEDDB as storage.
+                    </p>
+                  </div>
+                </div>
+              </v-timeline-item>
             </v-timeline>
           </v-col>
         </v-row>
-        <v-row class="d-block d-md-none ">
+        <v-row class="d-block d-md-none">
           <v-col cols="12" class="mt-5 d-flex justify-center">
             <div class="card">
               <div class="card-content">
@@ -102,6 +118,19 @@
                   Developed a <strong>Tic-Tac-Toe</strong> game using HTML, CSS,
                   and JavaScript, implementing game logic and an interactive UI
                   for a seamless experience.
+                </p>
+              </div>
+            </div>
+          </v-col>
+          <v-col cols="12" class="mt-5 d-flex justify-center">
+            <div class="card mt-5">
+              <div class="card-content">
+                <p class="card-title manrope-Bold-h4">AGRIMART WEBSITE</p>
+                <p class="card-para manrope-regular-h5">
+                  Developed a e-commerce website where customer can buy products
+                  directly from farmers and farmers can sell their products
+                  using HTML, CSS , JS and LOCAL STORAGE and INDEXEDDB as
+                  storage.
                 </p>
               </div>
             </div>

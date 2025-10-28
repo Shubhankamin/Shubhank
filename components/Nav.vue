@@ -140,7 +140,7 @@ const openDrawer = () => {
 
 const downloadPDF = () => {
   const link = document.createElement("a");
-  link.href = "/files/resume.pdf"; // Replace with your actual PDF file path
+  link.href = "/files/resume-2.pdf"; // Replace with your actual PDF file path
   link.download = "Shubhank's Resume.pdf"; // Set the filename for the download
   link.click();
 };
