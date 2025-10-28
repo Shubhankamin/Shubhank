@@ -30,7 +30,7 @@
 const experiences = [
   {
     title: "Front-End Developer",
-    dates: "Jan 2024 — Present",
+    dates: "Jan 2024 — May 2025",
     description:
       "• Developed and maintained e-commerce websites, real estate platforms, portfolios, and admin panels using HTML, CSS, JavaScript, Nuxt.js, and Vue.js.\n" +
       "• Implemented seamless API integrations and utilized Postman for efficient testing and debugging.\n" +
@@ -39,7 +39,7 @@ const experiences = [
   },
   {
     title: "Freelance Developer",
-    dates: "Nov 2024 — Present",
+    dates: "Nov 2024 — July 2025",
     description:
       "• Built and deployed custom websites, admin panels, and database-driven applications for various clients.\n" +
       "• Integrated APIs efficiently to enhance web functionalities and improve performance.\n" +
