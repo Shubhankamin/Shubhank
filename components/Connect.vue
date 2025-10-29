@@ -63,102 +63,95 @@
           </ul>
         </v-col>
         <v-col cols="12" md="6" class="pr-md-10 d-none d-md-block">
-          <form
-            action="https://formsubmit.co/shubhankamin20@gmail.com"
-            method="POST"
-          >
+          <!-- action="https://formsubmit.co/shubhankamin20@gmail.com"
+            method="POST" -->
+
+          <form @submit.prevent="submitForm">
             <div>
               <p class="pb-5">Name</p>
-
               <input
-                placeholder="Enter your Name"
+                v-model="form.name"
                 class="input w-75 py-1"
                 type="text"
-                name="name"
+                placeholder="Enter your Name"
               />
             </div>
             <div>
               <p class="py-5">Email</p>
-
               <input
+                v-model="form.email"
                 class="input w-75 py-1"
                 type="email"
                 placeholder="Enter Email"
-                name="email"
               />
             </div>
             <div>
               <p class="py-5">Subject</p>
-
               <input
+                v-model="form.subject"
                 class="input w-75 py-1"
-                type="email"
-                placeholder=" Enter Subject"
-                name="email"
+                type="text"
+                placeholder="Enter Subject"
               />
             </div>
             <div>
               <p class="py-5">Message</p>
-
               <textarea
+                v-model="form.message"
                 class="input w-75"
                 placeholder="Message"
-                name="message"
               />
             </div>
-            <input type="hidden" name="_captcha" value="false" />
-            <button class="submit py-2 px-12 my-10 manrope-Bold-h5">
+            <button
+              type="submit"
+              class="submit py-2 px-12 my-10 manrope-Bold-h5"
+            >
               Submit
             </button>
           </form>
         </v-col>
 
-         <v-col cols="12" md="6" class="px-5 d-block d-md-none">
-          <form
-            action="https://formsubmit.co/shubhankamin20@gmail.com"
-            method="POST"
-          >
+        <v-col cols="12" md="6" class="px-5 d-block d-md-none">
+          <form @submit.prevent="submitForm">
             <div>
               <p class="pb-5">Name</p>
-
               <input
-                placeholder="Enter your Name"
-                class="input w-100 py-1"
+                v-model="form.name"
+                class="input w-75 py-1"
                 type="text"
-                name="name"
+                placeholder="Enter your Name"
               />
             </div>
             <div>
               <p class="py-5">Email</p>
-
               <input
-                class="input w-100 py-1"
+                v-model="form.email"
+                class="input w-75 py-1"
                 type="email"
                 placeholder="Enter Email"
-                name="email"
               />
             </div>
             <div>
               <p class="py-5">Subject</p>
-
               <input
-                class="input w-100 py-1"
-                type="email"
-                placeholder=" Enter Subject"
-                name="email"
+                v-model="form.subject"
+                class="input w-75 py-1"
+                type="text"
+                placeholder="Enter Subject"
               />
             </div>
             <div>
               <p class="py-5">Message</p>
-
               <textarea
-                class="input w-100"
+                v-model="form.message"
+                class="input w-75"
                 placeholder="Message"
-                name="message"
               />
             </div>
-            <input type="hidden" name="_captcha" value="false" />
-            <button class="submit py-2 px-12 my-10 manrope-Bold-h5">
+            <button
+              type="submit"
+              class="submit py-2 px-12 my-10 manrope-Bold-h5"
+            >
               Submit
             </button>
           </form>
@@ -170,6 +163,36 @@
 
 <script setup>
 const whatsappLink = "https://wa.me/9731837215";
+
+import { ref } from "vue";
+
+const form = ref({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbz9dTnJD-D_zmVeQa-_8dvgfnRG8bwbyLQfaa3lh-B746AXhVtF0SYurI7thqK0ymox/exec";
+const submitForm = async () => {
+  try {
+    await fetch(scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form.value),
+    });
+
+    alert("Message sent successfully!");
+    form.value = { name: "", email: "", subject: "", message: "" };
+  } catch (error) {
+    console.error(error);
+    alert("Error sending message.");
+  }
+};
 </script>
 
 <style scoped>
