@@ -41,18 +41,18 @@
 const cardData = [
   {
     frontImage: "/images/admin-2.jpg",
-    backImage: "/images/back-image1.jpg",
+    backImage: "",
     backText: "ADMIN PANEL DEVELOPMENT",
   },
   {
     frontImage: "/images/app.jpg",
-    backImage: "/images/back-image2.jpg",
+    backImage: "",
     backText: "MOBILE APP DEVELOPMENT",
   },
 
   {
     frontImage: "/images/web.jpg",
-    backImage: "/images/back-image2.jpg",
+    backImage: "",
     backText: "WEBSITE  DEVELOPMENT",
   },
 ];

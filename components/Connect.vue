@@ -104,9 +104,17 @@
             </div>
             <button
               type="submit"
-              class="submit py-2 px-12 my-10 manrope-Bold-h5"
+              class="submit py-2 px-12 my-10 manrope-Bold-h5 d-flex align-center justify-center"
+              :disabled="loading"
             >
-              Submit
+              <span v-if="!loading">Submit</span>
+              <v-progress-circular
+                v-else
+                indeterminate
+                size="24"
+                width="3"
+                color="white"
+              />
             </button>
           </form>
         </v-col>
@@ -150,21 +158,38 @@
             </div>
             <button
               type="submit"
-              class="submit py-2 px-12 my-10 manrope-Bold-h5"
+              class="submit py-2 px-12 my-10 manrope-Bold-h5 d-flex align-center justify-center"
+              :disabled="loading"
             >
-              Submit
+              <span v-if="!loading">Submit</span>
+              <v-progress-circular
+                v-else
+                indeterminate
+                size="24"
+                width="3"
+                color="white"
+              />
             </button>
           </form>
         </v-col>
       </v-row>
+      <v-snackbar
+        v-model="snackbar"
+        :color="snackbarColor"
+        timeout="3000"
+        location="bottom right"
+        rounded="pill"
+      >
+        {{ snackbarMessage }}
+      </v-snackbar>
     </v-container>
   </div>
 </template>
 
 <script setup>
-const whatsappLink = "https://wa.me/9731837215";
-
 import { ref } from "vue";
+
+const whatsappLink = "https://wa.me/9731837215";
 
 const form = ref({
   name: "",
@@ -173,10 +198,18 @@ const form = ref({
   message: "",
 });
 
+const loading = ref(false); // BUTTON LOADER
+const snackbar = ref(false); // SNACKBAR VISIBILITY
+const snackbarMessage = ref(""); // SNACKBAR TEXT
+const snackbarColor = ref("success"); // success or error
+
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbz9dTnJD-D_zmVeQa-_8dvgfnRG8bwbyLQfaa3lh-B746AXhVtF0SYurI7thqK0ymox/exec";
+
 const submitForm = async () => {
   try {
+    loading.value = true;
+
     await fetch(scriptURL, {
       method: "POST",
       mode: "no-cors",
@@ -186,11 +219,17 @@ const submitForm = async () => {
       body: JSON.stringify(form.value),
     });
 
-    alert("Message sent successfully!");
+    snackbarMessage.value = "Message sent successfully!";
+    snackbarColor.value = "success";
+    snackbar.value = true;
+
     form.value = { name: "", email: "", subject: "", message: "" };
   } catch (error) {
-    console.error(error);
-    alert("Error sending message.");
+    snackbarMessage.value = "Error sending message.";
+    snackbarColor.value = "error";
+    snackbar.value = true;
+  } finally {
+    loading.value = false;
   }
 };
 </script>

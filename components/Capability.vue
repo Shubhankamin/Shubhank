@@ -7,10 +7,15 @@
         </v-col>
         <v-col cols="12" md="6">
           <p class="manrope-regular-h5">
-            I am always looking to add more skills.Morbi egestas neque eu
-            blandit fermentum. Nulla ac lobortis ligula. Pellentesque ac ex at
-            purus faucibus tristique ut et dolor.
+            I develop high-performance web interfaces using modern frameworks
+            like Nuxt 3, Vue 3, and React. My capabilities include building
+            responsive UI, integrating APIs, creating admin dashboards,
+            optimizing performance, and delivering clean, maintainable code. I
+            enjoy solving practical problems with efficient front-end
+            architecture and continuously expanding my skill set to stay aligned
+            with industry standards.
           </p>
+
           <div class="d-flex ga-4 flex-wrap pt-5">
             <div
               v-for="(skill, index) in skills"
