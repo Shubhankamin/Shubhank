@@ -37,6 +37,33 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Shubank | Front-end Developer (Nuxt 3, Vue 3)",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Front-end developer skilled in Nuxt 3, Vue 3, Vuetify, and UI development. 1 year of experience building websites, PWAs, e-commerce, and custom dashboards.",
+    },
+    {
+      name: "keywords",
+      content:
+        "Shubank, front-end developer, Nuxt developer, Vue developer, portfolio, Udupi developer, India developer",
+    },
+    { property: "og:title", content: "Shubank | Front-end Developer" },
+    {
+      property: "og:description",
+      content:
+        "Portfolio of Shubank, a front-end developer specializing in Nuxt 3, Vue 3, and modern UI development.",
+    },
+    {
+      property: "og:image",
+      content: "https://shubhankportfolio.netlify.app/logo.png",
+    },
+    { property: "og:url", content: "https://shubhankportfolio.netlify.app" },
+  ],
+});
+
 import { onMounted, ref } from "vue";
 
 const loading = ref(true); // Initial state for loading
