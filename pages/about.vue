@@ -137,7 +137,7 @@ onMounted(() => {
 // Function to download resume
 const downloadResume = () => {
   const link = document.createElement("a");
-  link.href = "/files/resume-2.pdf"; // Replace with your actual PDF file path
+  link.href = "/files/ShubhankAmin_251090700127.pdf"; // Replace with your actual PDF file path
   link.download = "Shubhank's Resume.pdf"; // Set the filename for the download
   link.click();
 };

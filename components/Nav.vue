@@ -60,13 +60,17 @@
             </NuxtLink>
           </div>
           <div class="d-block d-md-none">
-            <div class="background" @click="openDrawer">
-              <button class="menu__icon">
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-            </div>
+           <div class="background">
+  <button
+    class="menu__icon"
+    :class="{ open: drawer }"
+    @click="toggleDrawer"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
           </div>
           <v-navigation-drawer v-model="drawer" class="bg-black" temporary>
             <v-row>
@@ -134,13 +138,12 @@
 <script setup>
 const drawer = ref(false);
 const router = useRouter();
-const openDrawer = () => {
-  drawer.value = true;
+const toggleDrawer = () => {
+  drawer.value = !drawer.value;
 };
-
 const downloadPDF = () => {
   const link = document.createElement("a");
-  link.href = "/files/resume-2.pdf"; // Replace with your actual PDF file path
+  link.href = "/files/ShubhankAmin_251090700127.pdf"; // Replace with your actual PDF file path
   link.download = "Shubhank's Resume.pdf"; // Set the filename for the download
   link.click();
 };
@@ -206,41 +209,55 @@ button {
 .menu__icon span {
   display: block;
   width: 100%;
-  height: 0.125rem;
+  height: 2px;
   border-radius: 2px;
   background-color: white;
-  box-shadow: 0 0.5px 2px 0 hsla(0, 0%, 0%, 0.2);
-  transition: background-color 0.4s;
-  position: relative;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.menu__icon span + span {
-  margin-top: 0.375rem;
+.menu__icon span {
+  transition: 0.3s ease;
 }
 
-.menu__icon span:nth-child(1) {
-  animation: ease 0.8s menu-icon-top-2 forwards;
+/* OPEN STATE */
+.menu__icon.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
 }
 
-.menu__icon span:nth-child(2) {
-  animation: ease 0.8s menu-icon-scaled-2 forwards;
+.menu__icon.open span:nth-child(2) {
+  opacity: 0;
 }
 
-.menu__icon span:nth-child(3) {
-  animation: ease 0.8s menu-icon-bottom-2 forwards;
+.menu__icon.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-.menu__icon:hover span:nth-child(1) {
-  animation: ease 0.8s menu-icon-top forwards;
+
+.menu__icon.open span:nth-child(1) {
+  transform: translateY(10px) rotate(4deg);
 }
 
-.menu__icon:hover span:nth-child(2) {
-  animation: ease 0.8s menu-icon-scaled forwards;
+.menu__icon.open span:nth-child(2) {
+  opacity: 0;
 }
 
-.menu__icon:hover span:nth-child(3) {
-  animation: ease 0.8s menu-icon-bottom forwards;
-  background-color: #d3f576;
+.menu__icon.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.menu__icon.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu__icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu__icon.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 @keyframes menu-icon-top {
