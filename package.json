@@ -25,6 +25,7 @@
     "nuxt-aos": "^1.2.5",
     "nuxt-mail": "^5.0.1",
     "nuxt-simple-sitemap": "^4.4.1",
+    "swiper": "^12.2.0",
     "vue": "latest",
     "vue-tel-input": "^9.1.4"
   },

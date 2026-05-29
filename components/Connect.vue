@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fluid class="main text-white pt-0">
+    <v-container fluid class="main text-white pt-10">
       <v-row
         class="px-md-10 pt-md-10"
         data-aos="fade-up"
@@ -125,7 +125,7 @@
               <p class="pb-5">Name</p>
               <input
                 v-model="form.name"
-                class="input w-75 py-1"
+                class="input py-1"
                 type="text"
                 placeholder="Enter your Name"
               />
@@ -134,7 +134,7 @@
               <p class="py-5">Email</p>
               <input
                 v-model="form.email"
-                class="input w-75 py-1"
+                class="input py-1"
                 type="email"
                 placeholder="Enter Email"
               />
@@ -143,7 +143,7 @@
               <p class="py-5">Subject</p>
               <input
                 v-model="form.subject"
-                class="input w-75 py-1"
+                class="input py-1"
                 type="text"
                 placeholder="Enter Subject"
               />
@@ -152,24 +152,26 @@
               <p class="py-5">Message</p>
               <textarea
                 v-model="form.message"
-                class="input w-75"
+                class="input"
                 placeholder="Message"
               />
             </div>
-            <button
-              type="submit"
-              class="submit py-2 px-12 my-10 manrope-Bold-h5 d-flex align-center justify-center"
-              :disabled="loading"
-            >
-              <span v-if="!loading">Submit</span>
-              <v-progress-circular
-                v-else
-                indeterminate
-                size="24"
-                width="3"
-                color="white"
-              />
-            </button>
+            <div class="d-flex justify-center align-center">
+              <button
+                type="submit"
+                class="submit py-2 px-12 my-10 manrope-Bold-h5 d-flex align-center justify-center"
+                :disabled="loading"
+              >
+                <span v-if="!loading">Submit</span>
+                <v-progress-circular
+                  v-else
+                  indeterminate
+                  size="24"
+                  width="3"
+                  color="white"
+                />
+              </button>
+            </div>
           </form>
         </v-col>
       </v-row>
@@ -177,8 +179,8 @@
         v-model="snackbar"
         :color="snackbarColor"
         timeout="3000"
-        location="bottom right"
-        rounded="pill"
+        location="top right"
+        rounded="lg"
       >
         {{ snackbarMessage }}
       </v-snackbar>
@@ -192,10 +194,10 @@ import { ref } from "vue";
 const whatsappLink = "https://wa.me/9731837215";
 
 const form = ref({
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
+  name: "test",
+  email: "aminshubhank@gmail.com",
+  subject: "test",
+  message: "testst",
 });
 
 const loading = ref(false); // BUTTON LOADER
@@ -257,11 +259,68 @@ button {
   z-index: 1;
 }
 
-.main {
+/* .main {
   background-image: url("/images/meteor.png");
   background-size: cover;
   height: 100%;
   width: 100%;
+} */
+
+.main {
+  position: relative;
+
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+/* TOP GLOW */
+
+.main::before {
+  content: "";
+
+  position: absolute;
+
+  top: -200px;
+  right: -150px;
+
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(132, 204, 22, 0.08),
+    transparent 70%
+  );
+
+  filter: blur(120px);
+
+  z-index: -1;
+}
+
+/* BOTTOM GLOW */
+
+.main::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -250px;
+  left: -150px;
+
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.08),
+    transparent 70%
+  );
+
+  filter: blur(140px);
+
+  z-index: -1;
 }
 
 button::before {
@@ -283,33 +342,42 @@ button:hover::before {
   width: 9em;
 }
 
-/* From Uiverse.io by SSpisso */
 .input {
-  background-color: #383838;
-  border: 1ex solid none;
-  border-top-width: 1.7em;
-  margin: 0;
-  padding: 0;
-  color: #383838;
-  word-wrap: break-word;
-  outline: 7px solid #383838;
-  font-size: 17px;
-  text-align: center;
-  transition: all 0.5s;
-  font-weight: bold;
-  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+
+  padding: 22px 20px;
+  height: 54px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  outline: none;
+
+  transition: all 0.3s ease;
+
+  backdrop-filter: blur(12px);
 }
 
-.input:hover {
-  border-top-width: 0.2em;
-  background-color: #f1e8e8;
+textarea.input {
+  min-height: 140px;
+
+  resize: vertical;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .input:focus {
-  border-top-width: 0.2em;
-  background-color: #f1e8e8;
-}
+  border-color: rgba(211, 245, 118, 0.25);
 
+  box-shadow: 0 0 20px rgba(211, 245, 118, 0.08);
+}
 /* From Uiverse.io by Artahs */
 ul {
   list-style: none;
