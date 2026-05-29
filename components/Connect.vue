@@ -194,10 +194,10 @@ import { ref } from "vue";
 const whatsappLink = "https://wa.me/9731837215";
 
 const form = ref({
-  name: "test",
-  email: "aminshubhank@gmail.com",
-  subject: "test",
-  message: "testst",
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
 });
 
 const loading = ref(false); // BUTTON LOADER

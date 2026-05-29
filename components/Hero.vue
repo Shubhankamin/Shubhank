@@ -64,7 +64,7 @@
               style="border-radius: 20px"
             >
             </v-img> -->
-               <v-img
+            <v-img
               src="/images/me/me_3.jpeg"
               class="profile d-none d-md-block"
               lazy-src="/images/me-resized-new-1.png"
@@ -73,7 +73,7 @@
             >
             </v-img>
             <v-img
-              src="/images/me-new.PNG"
+              src="/images/me/me_3.jpeg"
               class="profile d-block d-md-none"
               lazy-src="/images/me-resized-new-1.png"
               height="550"
