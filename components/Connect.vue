@@ -179,8 +179,8 @@
         v-model="snackbar"
         :color="snackbarColor"
         timeout="3000"
-        location="bottom right"
-        rounded="pill"
+        location="top right"
+        rounded="lg"
       >
         {{ snackbarMessage }}
       </v-snackbar>
@@ -194,10 +194,10 @@ import { ref } from "vue";
 const whatsappLink = "https://wa.me/9731837215";
 
 const form = ref({
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
+  name: "test",
+  email: "aminshubhank@gmail.com",
+  subject: "test",
+  message: "testst",
 });
 
 const loading = ref(false); // BUTTON LOADER
