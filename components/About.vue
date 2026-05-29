@@ -46,7 +46,7 @@
   </div>
 </template>
 <style scoped>
-.heading {
+/* .heading {
   text-transform: uppercase;
 }
 
@@ -59,5 +59,125 @@
   background-size: cover;
   height: 100%;
   width: 100%;
+} */
+
+
+
+
+.heading {
+  text-transform: uppercase;
+  line-height: 0.95;
 }
+
+/* ABOUT SECTION */
+
+.main {
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  overflow: hidden;
+}
+
+/* Glow effect */
+
+.main::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(132, 204, 22, 0.08),
+    transparent 70%
+  );
+
+  top: -150px;
+  right: -100px;
+
+  filter: blur(80px);
+
+  z-index: 0;
+}
+
+/* Optional secondary glow */
+
+.main::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  background: radial-gradient(
+    circle,
+    rgba(59,130,246,0.08),
+    transparent 70%
+  );
+
+  bottom: -150px;
+  left: -100px;
+
+  filter: blur(90px);
+
+  z-index: 0;
+}
+
+/* Keep content above effects */
+
+.main > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Link Styling */
+
+.link {
+  color: #d3f576;
+  text-decoration: none;
+  position: relative;
+  width: fit-content;
+  transition: 0.3s ease;
+}
+
+.link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #d3f576;
+
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+/* Better text readability */
+
+.content {
+  max-width: 700px;
+  line-height: 1.4;
+}
+
 </style>

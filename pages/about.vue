@@ -33,23 +33,26 @@
         </v-col>
         <v-col cols="12" md="6" class="pt-md-5 pb-10">
           <p class="content manrope-regular-h4 text-white">
-            I am a Front-End Developer based in Udupi, passionate about crafting
-            seamless and engaging web experiences.
+            Front-End Developer and MCA student at MIT Manipal, specializing in
+            modern web development, responsive user interfaces, and
+            high-performance web applications.
           </p>
+
           <p class="pt-2 text-justify manrope-regular-h5 text-white">
-            I have previously worked in a startup environment, where I honed my
-            skills in modern web technologies and gained hands-on experience in
-            building scalable and high-performance applications. My expertise
-            includes
-            <strong
-              >Nuxt.js, Vue.js, React.js, Next.js, FlutterFlow, React Native,
-              Supabase, Figma, Canva, and core web technologies like HTML, CSS,
-              and JavaScript</strong
-            >. I am passionate about UI/UX design and always strive to create
-            intuitive, user-friendly, and accessible web experiences. Beyond
-            coding, I enjoy exploring new tech trends, refining my design
-            skills, and taking on creative challenges.
+            I am a Front-End Developer currently pursuing a Master of Computer
+            Applications (MCA) at MIT Manipal, with professional experience
+            across startup, freelance, and internship environments. I specialize
+            in building scalable web applications, admin dashboards, e-commerce
+            platforms, and responsive user interfaces using Nuxt 3, Vue 3,
+            JavaScript, TypeScript, React Native, and Next.js. My technical expertise
+            includes REST API integration, Firebase, Supabase, database-driven
+            applications, frontend architecture, performance optimization, and
+            modern UI/UX development. Passionate about creating intuitive and
+            accessible digital experiences, I continuously explore emerging
+            technologies and best practices to deliver efficient, maintainable,
+            and user-focused web solutions.
           </p>
+
           <div class="align-center pt-10 ga-4 d-none d-md-flex">
             <button
               class="contact-button py-1 px-6 manrope-Bold-h5"
@@ -102,9 +105,16 @@
       </v-row>
       <v-row class="justify-center mb-5">
         <v-col cols="12" md="10">
-          <v-img
+          <!-- <v-img
             src="/images/me-new-3.PNG"
             lazy-src="/images/me-resized-2.png"
+            style="border-radius: 20px"
+          ></v-img> -->
+
+            <v-img
+              src="/images/me/me_2.jpeg"
+            lazy-src="/images/me-resized-2.png"
+            style="border-radius: 20px"
           ></v-img>
         </v-col>
       </v-row>
@@ -121,17 +131,9 @@ import { onMounted, ref } from "vue";
 const loading = ref(true); // Initial state for loading
 
 onMounted(() => {
-  const img = new Image();
-  img.src = "/images/meteor.png"; // Path to your background image
-
-  img.onload = () => {
-    loading.value = false;
-  };
-
-  // Fallback: If image takes too long, hide loader after 5s
   setTimeout(() => {
     loading.value = false;
-  }, 5000);
+  }, 1500);
 });
 
 // Function to download resume
@@ -160,17 +162,90 @@ const downloadResume = () => {
   display: flex;
   align-items: center;
   color: black;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-.main {
+/* .main {
   background-image: url("/images/meteor.png");
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
+} */
+
+.main {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: #030712;
 }
 
+.main::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(59, 130, 246, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(132, 204, 22, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(147, 51, 234, 0.12),
+      transparent 30%
+    );
+
+  filter: blur(90px);
+
+  animation: auroraMove 14s ease infinite alternate;
+
+  z-index: -2;
+}
+
+.main::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  );
+
+  background-size: 4px 4px;
+
+  opacity: 0.12;
+
+  z-index: -1;
+}
+
+@keyframes auroraMove {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+
+  to {
+    transform: scale(1.1) rotate(6deg);
+  }
+}
 .contact-button:hover {
   background-color: #0077b5;
   color: #d3f576;

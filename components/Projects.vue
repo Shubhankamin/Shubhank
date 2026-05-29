@@ -11,7 +11,7 @@
             </p>
           </v-col>
         </v-row>
-        <v-row class="px-md-10 pt-10" v-for="(item, i) in projects" :key="i">
+        <v-row class="px-md-10" v-for="(item, i) in projects" :key="i">
           <v-col cols="12" md="6">
             <div class="box px-md-10 py-md-5 pa-5">
               <v-img :src="item.src" class="rounded-lg"> </v-img>
@@ -91,12 +91,166 @@
   color: #d3f576;
 }
 
-.main {
+/* .main {
   background-image: url("/images/meteor.png");
   background-size: cover;
   height: 100%;
   width: 100%;
+} */
+
+
+
+.heading {
+  text-transform: uppercase;
+  line-height: 0.95;
 }
+
+/* MAIN SECTION */
+
+.main {
+  position: relative;
+
+
+  background: transparent;
+
+  overflow: hidden;
+}
+
+/* PROJECT CARD */
+
+.box {
+  position: relative;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.35);
+}
+
+/* CARD HOVER */
+
+.box:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(211,245,118,0.2);
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,0.5),
+    0 0 40px rgba(211,245,118,0.08);
+}
+
+/* IMAGE */
+
+.box .v-img {
+  border-radius: 18px;
+
+  transition: transform 0.5s ease;
+}
+
+.box:hover .v-img {
+  transform: scale(1.03);
+}
+
+/* GLOW EFFECT */
+
+.box::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  background:
+    radial-gradient(circle,
+      rgba(132,204,22,0.08),
+      transparent 70%);
+
+  top: -120px;
+  right: -120px;
+
+  filter: blur(60px);
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+
+  z-index: 0;
+}
+
+.box:hover::before {
+  opacity: 1;
+}
+
+/* CONTENT */
+
+.title {
+  color: white;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+}
+
+.manrope-regular-h5 {
+  color: rgba(255,255,255,0.72);
+
+  line-height: 1.8;
+}
+
+/* LINKS */
+
+.links a {
+  position: relative;
+
+  color: #d3f576;
+
+  transition: all 0.3s ease;
+}
+
+.links a:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.85;
+}
+
+/* ICONS */
+
+.icon {
+  color: #d3f576;
+}
+
+/* DIVIDER */
+
+.v-divider {
+  opacity: 0.18;
+}
+
+/* SECTION SPACING */
+
+.v-row {
+  margin-bottom: 70px;
+}
+
+@media (max-width: 960px) {
+  .v-row {
+    margin-bottom: 20px;
+  }
+}
+
 </style>
 
 <script setup>

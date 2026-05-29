@@ -67,12 +67,108 @@ const cardData = [
   font-family: sans-serif;
 }
 
-.main {
+/* .main {
   background-image: url("/images/meteor.png");
   background-size: cover;
   height: 100%;
   width: 100%;
+} */
+
+
+.main {
+  position: relative;
+
+
+  overflow: hidden;
+
+  background: transparent;
 }
+
+/* SECTION TITLE */
+
+.heading {
+  text-transform: uppercase;
+
+  line-height: 0.95;
+
+  margin-bottom: 60px;
+}
+
+/* CARD */
+
+/* .flip-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 360px;
+
+  min-height: 420px;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.04);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,0.35);
+} */
+
+/* HOVER */
+
+
+
+/* REMOVE OLD FLIP SYSTEM */
+
+
+
+/* CONTENT */
+
+.title {
+  position: relative;
+
+  z-index: 2;
+
+  color: white;
+
+  font-size: 1.6rem;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  margin-bottom: 14px;
+
+  text-align: left;
+}
+
+/* DESCRIPTION */
+
+.description {
+  position: relative;
+
+  z-index: 2;
+
+  color: rgba(255,255,255,0.72);
+
+  line-height: 1.7;
+
+  font-size: 15px;
+}
+
+
+
+
+
 
 .title {
   font-size: 1.5em;
