@@ -44,13 +44,13 @@
             across startup, freelance, and internship environments. I specialize
             in building scalable web applications, admin dashboards, e-commerce
             platforms, and responsive user interfaces using Nuxt 3, Vue 3,
-            JavaScript, TypeScript, React Native, and Next.js. My technical expertise
-            includes REST API integration, Firebase, Supabase, database-driven
-            applications, frontend architecture, performance optimization, and
-            modern UI/UX development. Passionate about creating intuitive and
-            accessible digital experiences, I continuously explore emerging
-            technologies and best practices to deliver efficient, maintainable,
-            and user-focused web solutions.
+            JavaScript, TypeScript, React Native, and Next.js. My technical
+            expertise includes REST API integration, Firebase, Supabase,
+            database-driven applications, frontend architecture, performance
+            optimization, and modern UI/UX development. Passionate about
+            creating intuitive and accessible digital experiences, I
+            continuously explore emerging technologies and best practices to
+            deliver efficient, maintainable, and user-focused web solutions.
           </p>
 
           <div class="align-center pt-10 ga-4 d-none d-md-flex">
@@ -111,9 +111,9 @@
             style="border-radius: 20px"
           ></v-img> -->
 
-            <v-img
-              src="/images/me/me_2.jpeg"
-            lazy-src="/images/me-resized-2.png"
+          <v-img
+            src="/images/me/me_8.jpeg"
+            lazy-src="/images/me/me_8_lazy.jpeg"
             style="border-radius: 20px"
           ></v-img>
         </v-col>

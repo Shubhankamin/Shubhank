@@ -14,7 +14,7 @@
                 shubhank amin.
               </h1>
             </div>
-            <div class="d-flex justify-center pr-5 pt-2">
+            <div class="d-flex pl-8 pt-2">
               <p class="text-white manrope-regular-h5">
                 I’m a Front-End Developer currently pursuing a Master of
                 Computer Applications (MCA) at MIT Manipal, with experience
@@ -54,7 +54,7 @@
             </div>
           </div>
         </v-col>
-        <v-col cols="12" md="4" sm="6" class="pt-10 pt-sm-0 pt-md-0">
+        <v-col cols="12" md="4" sm="6" class="pt-10 pt-sm-0 pt-md-0 pr-md-16">
           <div>
             <!-- <v-img
               src="/images/me-new.PNG"
@@ -65,18 +65,18 @@
             >
             </v-img> -->
             <v-img
-              src="/images/me/me_3.jpeg"
+              src="/images/me/me_10.jpeg"
               class="profile d-none d-md-block"
-              lazy-src="/images/me-resized-new-1.png"
-              height="600"
-              style="border-radius: 20px"
+              lazy-src="/images/me/me_4_lazy.jpeg"
+              cover
+              height="800"
+              style="border-radius: 20px; "
             >
             </v-img>
             <v-img
-              src="/images/me/me_3.jpeg"
+              src="/images/me/me_11.jpeg"
               class="profile d-block d-md-none"
-              lazy-src="/images/me-resized-new-1.png"
-              height="550"
+              lazy-src="/images/me/me_4_lazy.jpeg"
               style="border-radius: 20px"
             >
             </v-img>
