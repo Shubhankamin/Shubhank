@@ -4,7 +4,7 @@
       <v-row
         class="mt-md-14 mt-8 mb-10"
         data-aos="fade-up"
-        data-aos-duration="3000"
+        data-aos-duration="2000"
       >
         <v-col cols="12" md="8" sm="6" class="pt-md-16 pt-md-7">
           <div class="px-md-16">

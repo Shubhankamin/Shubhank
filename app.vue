@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="fullscreen-container" v-if="loading">
+    <!-- <div class="fullscreen-container" v-if="loading">
       <div class="loader">
         <div class="box box-1">
           <div class="side-left"></div>
@@ -22,6 +22,17 @@
           <div class="side-right"></div>
           <div class="side-top"></div>
         </div>
+      </div>
+    </div> -->
+
+    <div v-if="loading" class="intro-loader">
+      <h1 class="intro-title">Welcome to My Portfolio</h1>
+
+      <h2 class="intro-name">Shubhank Amin</h2>
+
+      <p class="intro-text">Every line of code tells a story. This is mine.</p>
+      <div class="loading-bar">
+        <span></span>
       </div>
     </div>
 
@@ -194,6 +205,135 @@ onMounted(() => {
     z-index: 5;
     translate: 0px 30px;
     opacity: 0;
+  }
+}
+
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  background: #030712;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  z-index: 9999;
+}
+
+/* Background Glow */
+
+.bg-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: float 8s ease-in-out infinite;
+}
+
+.blur-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(211, 233, 122, 0.15);
+  top: 10%;
+  left: 15%;
+}
+
+.blur-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(100, 255, 218, 0.12);
+  bottom: 10%;
+  right: 15%;
+}
+
+.intro-title {
+  color: #d3e97a;
+  letter-spacing: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeUp 0.8s forwards;
+}
+
+.intro-name {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  background: linear-gradient(90deg, #ffffff, #d3e97a, #ffffff);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    fadeUp 0.8s 0.3s forwards,
+    shine 4s linear infinite;
+  opacity: 0;
+}
+
+.intro-text {
+  max-width: 600px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding: 0 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+
+.loading-bar {
+  width: 280px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.loading-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #d3e97a, #ffffff, #d3e97a);
+  box-shadow: 0 0 20px #d3e97a;
+  animation: loading 2.5s ease forwards;
+}
+
+.loading-text {
+  color: #6b7280;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+@keyframes loading {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes shine {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 200%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-30px);
   }
 }
 </style>
