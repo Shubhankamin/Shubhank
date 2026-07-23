@@ -77,7 +77,7 @@ const skills = [
 } */
 
 
-.main {
+/* .main {
   position: relative;
 
   padding: 120px 0;
@@ -85,7 +85,6 @@ const skills = [
   overflow: hidden;
 }
 
-/* SECTION GLOW */
 
 .main::before {
   content: "";
@@ -108,6 +107,13 @@ const skills = [
   filter: blur(90px);
 
   pointer-events: none;
+} */
+
+.main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
 }
 
 /* HEADING */
@@ -115,7 +121,7 @@ const skills = [
 .heading {
   text-transform: uppercase;
 
-  color: #d3f576;
+  /* color: #d3f576; */
 
   line-height: 0.95;
 

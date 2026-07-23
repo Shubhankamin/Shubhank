@@ -131,7 +131,7 @@
 
 /* Aurora Background */
 
-.main::before {
+/* .main::before {
   content: "";
 
   position: absolute;
@@ -161,7 +161,6 @@
   z-index: -2;
 }
 
-/* Noise Texture */
 
 .main::after {
   content: "";
@@ -181,7 +180,6 @@
   z-index: -1;
 }
 
-/* Animation */
 
 @keyframes auroraMove {
   from {
@@ -191,7 +189,16 @@
   to {
     transform: scale(1.1) rotate(6deg);
   }
+} */
+
+.main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
 }
+
+
 
 /* CONTACT SECTION */
 

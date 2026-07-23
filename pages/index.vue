@@ -37,15 +37,37 @@
   </div>
 
   <div v-else class="main">
+    <div class="mouse-follower">
+      <div class="energy-ring"></div>
+      <span class="particle particle-1"></span>
+      <span class="particle particle-2"></span>
+      <span class="particle particle-3"></span>
+    </div>
     <Nav />
-    <Hero class="mt-10 mt-md-0" />
-    <Projects id="work" />
-    <Specialize id="spcialize" />
-    <!-- <Education /> -->
-    <!-- <Project-1 /> -->
-    <Skills id="skills" />
-    <About id="about" />
-    <Connect id="connect" />
+
+    <section id="hero" class="reveal-section">
+      <Hero class="mt-10 mt-md-0" />
+    </section>
+
+    <section id="work" class="reveal-section">
+      <Projects />
+    </section>
+
+    <section id="specialize" class="reveal-section">
+      <Specialize />
+    </section>
+
+    <section id="skills" class="reveal-section">
+      <Skills />
+    </section>
+
+    <section id="about" class="reveal-section">
+      <About />
+    </section>
+
+    <section id="connect" class="reveal-section">
+      <Connect />
+    </section>
   </div>
 </template>
 
@@ -78,8 +100,12 @@ useHead({
 });
 
 import { onMounted, ref } from "vue";
+import { useScrollAurora } from "~/composables/useScrollAurora";
+import { useMouseFollower } from "~/composables/useMouseFollower";
+useScrollAurora();
+useMouseFollower();
 
-const loading = ref(true); // Initial state for loading
+const loading = ref(true);
 
 onMounted(() => {
   const img = new Image();
@@ -136,6 +162,13 @@ onMounted(() => {
 
 /* Aurora Glow Layer */
 
+:root {
+  --aurora-x: 15%;
+  --aurora-y: 20%;
+  --aurora-color-1: 59, 130, 246;
+  --aurora-color-2: 132, 204, 22;
+}
+
 .main::before {
   content: "";
   position: fixed;
@@ -143,24 +176,19 @@ onMounted(() => {
 
   background:
     radial-gradient(
-      circle at 15% 20%,
-      rgba(59, 130, 246, 0.18),
-      transparent 30%
+      circle at var(--aurora-x) var(--aurora-y),
+      rgba(var(--aurora-color-1), 0.18),
+      transparent 35%
     ),
     radial-gradient(
-      circle at 85% 15%,
-      rgba(132, 204, 22, 0.14),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(147, 51, 234, 0.14),
+      circle at calc(100% - var(--aurora-x)) calc(100% - var(--aurora-y)),
+      rgba(var(--aurora-color-2), 0.14),
       transparent 30%
     );
 
   filter: blur(90px);
 
-  animation: auroraMove 14s ease infinite alternate;
+  transition: background 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 
   z-index: -2;
 }
@@ -471,11 +499,6 @@ onMounted(() => {
   }
 }
 
-
-
-
-
-
 .intro-loader {
   position: fixed;
   inset: 0;
@@ -494,7 +517,7 @@ onMounted(() => {
   letter-spacing: 4px;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeUp .8s forwards;
+  animation: fadeUp 0.8s forwards;
 }
 
 .intro-name {
@@ -502,19 +525,19 @@ onMounted(() => {
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
   opacity: 0;
-  animation: fadeUp .8s .3s forwards;
+  animation: fadeUp 0.8s 0.3s forwards;
 }
 
 .intro-text {
   color: #9ca3af;
   opacity: 0;
-  animation: fadeUp .8s .6s forwards;
+  animation: fadeUp 0.8s 0.6s forwards;
 }
 
 .loading-bar {
   width: 250px;
   height: 4px;
-  background: rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   overflow: hidden;
   margin-top: 20px;
@@ -545,4 +568,222 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
-</style>
+
+/* .mouse-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  z-index: -2;
+
+  transform: translate(
+    calc(var(--follower-x, 50vw) - 50%),
+    calc(var(--follower-y, 50vh) - 50%)
+  );
+
+  background: radial-gradient(
+    circle,
+    rgba(211, 245, 118, 0.35),
+    transparent 70%
+  );
+
+  filter: blur(40px);
+}
+
+.main::before {
+  z-index: -3;
+}
+.mouse-follower {
+  z-index: -2;
+} 
+.main::after {
+  z-index: -1;
+}  */
+
+.mouse-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 110px;
+  height: 110px;
+
+  pointer-events: none;
+  z-index: 9999999999;
+
+  transform: translate(
+    calc(var(--follower-x, 50vw) - 50%),
+    calc(var(--follower-y, 50vh) - 50%)
+  );
+
+  will-change: transform;
+}
+
+/* Main organic orbit */
+
+.energy-ring {
+  position: absolute;
+  inset: 18px;
+
+  border: 1px solid rgba(211, 245, 118, 0.45);
+
+  border-radius: 55% 45% 62% 38% / 42% 58% 42% 58%;
+
+  box-shadow:
+    0 0 12px rgba(211, 245, 118, 0.18),
+    inset 0 0 12px rgba(211, 245, 118, 0.06);
+
+  animation:
+    morphRing 5s ease-in-out infinite alternate,
+    rotateRing 10s linear infinite;
+}
+
+/* Secondary orbit */
+
+.energy-ring::before {
+  content: "";
+
+  position: absolute;
+  inset: -14px;
+
+  border-radius: 50%;
+
+  border-top: 1px solid rgba(96, 165, 250, 0.5);
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid rgba(211, 245, 118, 0.2);
+  border-left: 1px solid transparent;
+
+  animation: reverseRotate 6s linear infinite;
+}
+
+/* Core */
+
+.energy-ring::after {
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #d3f576;
+
+  box-shadow:
+    0 0 6px #d3f576,
+    0 0 15px rgba(211, 245, 118, 0.8),
+    0 0 30px rgba(211, 245, 118, 0.35);
+
+  animation: corePulse 2s ease-in-out infinite;
+}
+
+/* Particles */
+
+.particle {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #d3f576;
+
+  box-shadow: 0 0 8px #d3f576;
+}
+
+.particle-1 {
+  top: 7px;
+  left: 52%;
+
+  animation: particleFloat1 4s ease-in-out infinite;
+}
+
+.particle-2 {
+  right: 5px;
+  bottom: 22px;
+
+  width: 2px;
+  height: 2px;
+
+  background: #60a5fa;
+
+  box-shadow: 0 0 8px #60a5fa;
+
+  animation: particleFloat2 5s ease-in-out infinite;
+}
+
+.particle-3 {
+  display: none;
+}
+@keyframes morphRing {
+  0% {
+    border-radius: 55% 45% 62% 38% / 42% 58% 42% 58%;
+    transform: scale(0.95);
+  }
+
+  50% {
+    border-radius: 42% 58% 40% 60% / 60% 40% 55% 45%;
+    transform: scale(1.05);
+  }
+
+  100% {
+    border-radius: 63% 37% 52% 48% / 38% 62% 45% 55%;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes rotateRing {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes reverseRotate {
+  to {
+    rotate: -360deg;
+  }
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 1;
+  }
+}
+
+@keyframes particleFloat1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(8px, -5px);
+  }
+}
+
+@keyframes particleFloat2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(6px, 8px);
+  }
+}</style>
