@@ -786,4 +786,11 @@ onMounted(() => {
   50% {
     transform: translate(6px, 8px);
   }
-}</style>
+}
+
+@media (max-width: 1024px) {
+  .mouse-follower {
+    display: none;
+  }
+}
+</style>
