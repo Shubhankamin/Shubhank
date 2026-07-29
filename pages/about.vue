@@ -610,4 +610,10 @@ const downloadResume = () => {
     transform: translate(6px, 8px);
   }
 }
+
+@media (max-width: 1024px) {
+  .mouse-follower {
+    display: none;
+  }
+}
 </style>
