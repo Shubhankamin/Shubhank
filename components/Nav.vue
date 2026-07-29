@@ -12,9 +12,59 @@
             </NuxtLink>
           </div>
         </v-col>
-        <v-col cols="4" class="d-flex justify-center">
+        <!-- <v-col cols="4" class="d-flex justify-center">
           <div>
             <v-img src="/images/logo-2.png" class="logo" @click="downloadPDF" />
+          </div>
+        </v-col> -->
+        <v-col cols="4" class="d-flex justify-center">
+          <div class="logo-wrapper">
+            <v-img src="/images/logo-2.png" class="logo" @click="downloadPDF" />
+
+            <svg
+              class="resume-arrow"
+              width="120"
+              height="80"
+              viewBox="0 0 120 80"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 68
+       C18 45,
+         42 22,
+         70 18
+       S102 10,
+         104 12"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-dasharray="5 6"
+              />
+
+              <!-- Arrow Head -->
+              <path
+                d="M95 5
+       L105 12
+       L94 17"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <div class="resume-card">
+              <div class="resume-text">
+                Click the logo to
+                <span>download<br />my resume</span>
+              </div>
+
+              <div class="resume-icon">
+                <v-icon size="22"> mdi-file-download-outline </v-icon>
+              </div>
+            </div>
           </div>
         </v-col>
         <v-col cols="4">
@@ -457,5 +507,266 @@ button {
 }
 
 .bg-mobile {
+}
+
+/* -------------------- */
+/* LOGO WRAPPER */
+/* -------------------- */
+
+.logo-wrapper {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+/* -------------------- */
+/* TOOLTIP */
+/* -------------------- */
+
+.resume-card {
+  position: absolute;
+
+  top: 130px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 280px;
+
+  padding: 14px 18px;
+
+  border-radius: 40px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: rgba(12, 18, 28, 0.92);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+
+  animation: floating 3s ease-in-out infinite;
+
+  z-index: 5;
+}
+
+.resume-text {
+  color: white;
+
+  font-size: 0.95rem;
+
+  line-height: 1.4;
+}
+
+.resume-text span {
+  color: #d3f576;
+
+  font-weight: 700;
+}
+
+/* -------------------- */
+/* DOWNLOAD ICON */
+/* -------------------- */
+
+.resume-icon {
+  width: 46px;
+
+  height: 46px;
+
+  border-radius: 50%;
+
+  background: #d3f576;
+
+  color: #111;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+/* -------------------- */
+/* CURVED ARROW */
+/* -------------------- */
+
+.resume-arrow {
+  position: absolute;
+  top: 60px;
+  left: 0%;
+  transform: translateX(-60%);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.resume-arrow path:first-child {
+  animation: dashMove 2.5s linear infinite;
+}
+
+@keyframes dashMove {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* .resume-arrow polygon {
+  fill: white;
+} */
+
+/* -------------------- */
+/* SPARKLES */
+/* -------------------- */
+
+/* .spark {
+  position: absolute;
+
+  width: 4px;
+
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #d3f576;
+}
+
+.spark-1 {
+  right: 16px;
+
+  top: -7px;
+}
+
+.spark-2 {
+  right: 8px;
+
+  top: 8px;
+} */
+
+/* -------------------- */
+/* LOGO */
+/* -------------------- */
+
+.logo {
+  cursor: pointer;
+
+  transition: 0.35s;
+
+  animation: pulseLogo 3s infinite;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+
+  filter: drop-shadow(0 0 18px rgba(211, 245, 118, 0.45));
+}
+
+/* -------------------- */
+/* ANIMATIONS */
+/* -------------------- */
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+}
+
+@keyframes pulseLogo {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 40;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-wrapper:hover::after {
+  animation: logoPulse 1.5s infinite;
+}
+
+@keyframes logoPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.35);
+    opacity: 0;
+  }
+}
+
+.logo-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  width: 68px;
+  height: 68px;
+
+  border-radius: 50%;
+
+  border: 2px solid #d3f576;
+
+  opacity: 0;
+
+  transform: scale(0.9);
+
+  transition: 0.35s ease;
+
+  pointer-events: none;
+}
+
+.logo-wrapper:hover::before {
+  animation: pulseRing 1.4s ease infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
 }
 </style>

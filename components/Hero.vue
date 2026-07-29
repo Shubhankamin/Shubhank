@@ -14,6 +14,7 @@
                 shubhank amin.
               </h1>
             </div>
+            
             <div class="d-flex pl-8 pt-2">
               <p class="text-white manrope-regular-h5">
                 I’m a Front-End Developer currently pursuing a Master of
