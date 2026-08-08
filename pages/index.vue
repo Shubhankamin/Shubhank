@@ -44,6 +44,9 @@
       <span class="particle particle-3"></span>
     </div>
     <Nav />
+    <div class="d-none d-md-block" id="reveal">
+      <Reveal />
+    </div>
 
     <section id="hero" class="reveal-section">
       <Hero class="mt-10 mt-md-0" />
@@ -102,6 +105,7 @@ useHead({
 import { onMounted, ref } from "vue";
 import { useScrollAurora } from "~/composables/useScrollAurora";
 import { useMouseFollower } from "~/composables/useMouseFollower";
+import Reveal from "~/components/Reveal.vue";
 useScrollAurora();
 useMouseFollower();
 
