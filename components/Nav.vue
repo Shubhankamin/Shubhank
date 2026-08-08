@@ -5,7 +5,7 @@
         <v-col class="" cols="4">
           <div>
             <NuxtLink
-              to="/"
+              to="/#reveal"
               style="text-decoration: none; scroll-behavior: smooth"
             >
               <p class="links bebas-Bold-h3">SHUBHANK</p>
