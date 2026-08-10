@@ -1,21 +1,23 @@
 import json
 import pickle
 
-import numpy as np
-
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
 
 
 # ============================================================
 # 1. LOAD TRAINING DATA
 # ============================================================
 
-with open("data/intents.json", "r", encoding="utf-8") as file:
+with open(
+    "data/intents.json",
+    "r",
+    encoding="utf-8"
+) as file:
+
     data = json.load(file)
 
 
@@ -24,21 +26,28 @@ labels = []
 
 
 for intent in data["intents"]:
+
     for pattern in intent["patterns"]:
+
         sentences.append(pattern)
         labels.append(intent["tag"])
 
 
 print("=" * 50)
-print("RESUME AI - MODEL TRAINING")
+print("SHUBHANK AI - MODEL TRAINING")
 print("=" * 50)
 
-print(f"Training examples: {len(sentences)}")
-print(f"Number of intents: {len(set(labels))}")
+print(
+    f"Training examples: {len(sentences)}"
+)
+
+print(
+    f"Number of intents: {len(set(labels))}"
+)
 
 
 # ============================================================
-# 2. TEXT → NUMBERS USING TF-IDF
+# 2. TEXT → TF-IDF
 # ============================================================
 
 vectorizer = TfidfVectorizer(
@@ -46,10 +55,15 @@ vectorizer = TfidfVectorizer(
     ngram_range=(1, 2)
 )
 
-X = vectorizer.fit_transform(sentences).toarray()
+
+X = vectorizer.fit_transform(
+    sentences
+)
 
 
-print(f"Vocabulary size: {X.shape[1]}")
+print(
+    f"Vocabulary size: {X.shape[1]}"
+)
 
 
 # ============================================================
@@ -58,13 +72,20 @@ print(f"Vocabulary size: {X.shape[1]}")
 
 encoder = LabelEncoder()
 
-y = encoder.fit_transform(labels)
+y = encoder.fit_transform(
+    labels
+)
 
 
 print("\nIntent classes:")
 
-for index, intent in enumerate(encoder.classes_):
-    print(f"{index}: {intent}")
+for index, intent in enumerate(
+    encoder.classes_
+):
+
+    print(
+        f"{index}: {intent}"
+    )
 
 
 # ============================================================
@@ -81,101 +102,79 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 
 print("\nDataset split:")
-print(f"Training samples: {len(X_train)}")
-print(f"Testing samples: {len(X_test)}")
 
+print(
+    f"Training samples: {X_train.shape[0]}"
+)
 
-# ============================================================
-# 5. BUILD NEURAL NETWORK
-# ============================================================
-
-model = Sequential([
-    Dense(
-        128,
-        activation="relu",
-        input_shape=(X.shape[1],)
-    ),
-
-    Dropout(0.3),
-
-    Dense(
-        64,
-        activation="relu"
-    ),
-
-    Dropout(0.2),
-
-    Dense(
-        len(encoder.classes_),
-        activation="softmax"
-    )
-])
-
-
-# ============================================================
-# 6. COMPILE MODEL
-# ============================================================
-
-model.compile(
-    optimizer="adam",
-    loss="sparse_categorical_crossentropy",
-    metrics=["accuracy"]
+print(
+    f"Testing samples: {X_test.shape[0]}"
 )
 
 
 # ============================================================
-# 7. TRAIN MODEL
+# 5. LOGISTIC REGRESSION CLASSIFIER
+# ============================================================
+
+classifier = LogisticRegression(
+    max_iter=1000
+)
+
+
+# ============================================================
+# 6. TRAIN
 # ============================================================
 
 print("\nStarting training...\n")
 
-history = model.fit(
+
+classifier.fit(
     X_train,
-    y_train,
-
-    validation_data=(
-        X_test,
-        y_test
-    ),
-
-    epochs=100,
-
-    batch_size=8,
-
-    verbose=1
+    y_train
 )
 
 
 # ============================================================
-# 8. EVALUATE MODEL
+# 7. EVALUATE
 # ============================================================
 
-loss, accuracy = model.evaluate(
-    X_test,
+predictions = classifier.predict(
+    X_test
+)
+
+
+accuracy = accuracy_score(
     y_test,
-    verbose=0
+    predictions
 )
 
 
-print("\n" + "=" * 50)
+print("=" * 50)
 print("MODEL EVALUATION")
 print("=" * 50)
 
-print(f"Test loss: {loss:.4f}")
-print(f"Test accuracy: {accuracy:.4f}")
-
-
-# ============================================================
-# 9. SAVE MODEL
-# ============================================================
-
-model.save(
-    "model/resume_model.keras"
+print(
+    f"Test accuracy: {accuracy:.4f}"
 )
 
 
 # ============================================================
-# 10. SAVE TF-IDF VECTORIZER
+# 8. SAVE CLASSIFIER
+# ============================================================
+
+with open(
+    "model/resume_model.pkl",
+    "wb"
+) as file:
+
+    pickle.dump(
+        classifier,
+        file
+    )
+
+
+# ============================================================
+# 9. SAVE TF-IDF VECTORIZER
 # ============================================================
 
 with open(
@@ -190,7 +189,7 @@ with open(
 
 
 # ============================================================
-# 11. SAVE LABEL ENCODER
+# 10. SAVE LABEL ENCODER
 # ============================================================
 
 with open(
@@ -208,8 +207,16 @@ print("\nModel saved successfully!")
 
 print("\nGenerated files:")
 
-print("model/resume_model.keras")
-print("model/vectorizer.pkl")
-print("model/encoder.pkl")
+print(
+    "model/resume_model.pkl"
+)
+
+print(
+    "model/vectorizer.pkl"
+)
+
+print(
+    "model/encoder.pkl"
+)
 
 print("\nTraining completed.")

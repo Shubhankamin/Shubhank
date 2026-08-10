@@ -1,16 +1,19 @@
 import json
+import pickle
 
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
 # ============================================================
-# LOAD EMBEDDING MODEL
+# LOAD VECTORIZER
 # ============================================================
 
-embedding_model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
+with open(
+    "model/vectorizer.pkl",
+    "rb"
+) as file:
+
+    vectorizer = pickle.load(file)
 
 
 # ============================================================
@@ -38,7 +41,9 @@ for intent in data["intents"]:
 
     for pattern in intent["patterns"]:
 
-        patterns.append(pattern)
+        patterns.append(
+            pattern
+        )
 
         pattern_intents.append(
             intent["tag"]
@@ -46,12 +51,11 @@ for intent in data["intents"]:
 
 
 # ============================================================
-# CREATE EMBEDDINGS FOR EACH PATTERN
+# CREATE TF-IDF EMBEDDINGS
 # ============================================================
 
-pattern_embeddings = embedding_model.encode(
-    patterns,
-    normalize_embeddings=True
+pattern_embeddings = vectorizer.transform(
+    patterns
 )
 
 
@@ -61,10 +65,18 @@ pattern_embeddings = embedding_model.encode(
 
 def semantic_predict(question):
 
-    query_embedding = embedding_model.encode(
-        [question],
-        normalize_embeddings=True
+    # --------------------------------------------------------
+    # Convert question to TF-IDF
+    # --------------------------------------------------------
+
+    query_embedding = vectorizer.transform(
+        [question]
     )
+
+
+    # --------------------------------------------------------
+    # Calculate cosine similarity
+    # --------------------------------------------------------
 
     similarities = cosine_similarity(
         query_embedding,
@@ -73,27 +85,33 @@ def semantic_predict(question):
 
 
     # --------------------------------------------------------
-    # Group similarities by intent
+    # Group scores by intent
     # --------------------------------------------------------
 
     intent_scores = {}
 
 
-    for index, intent in enumerate(pattern_intents):
+    for index, intent in enumerate(
+        pattern_intents
+    ):
 
         score = float(
             similarities[index]
         )
 
+
         if intent not in intent_scores:
 
             intent_scores[intent] = []
 
-        intent_scores[intent].append(score)
+
+        intent_scores[intent].append(
+            score
+        )
 
 
     # --------------------------------------------------------
-    # Take best 3 matches for every intent
+    # Calculate average + best score
     # --------------------------------------------------------
 
     ranked_intents = []
@@ -101,13 +119,22 @@ def semantic_predict(question):
 
     for intent, scores in intent_scores.items():
 
-        scores.sort(reverse=True)
+        scores.sort(
+            reverse=True
+        )
+
 
         top_scores = scores[:3]
 
-        average_score = sum(top_scores) / len(top_scores)
+
+        average_score = (
+            sum(top_scores)
+            / len(top_scores)
+        )
+
 
         best_score = top_scores[0]
+
 
         ranked_intents.append(
             (
@@ -128,9 +155,58 @@ def semantic_predict(question):
     )
 
 
+    # --------------------------------------------------------
+    # Handle empty result
+    # --------------------------------------------------------
+
+    if not ranked_intents:
+
+        return (
+            "unknown",
+            0.0,
+            0.0,
+            "unknown",
+            0.0
+        )
+
+
+    # --------------------------------------------------------
+    # Best intent
+    # --------------------------------------------------------
+
     best = ranked_intents[0]
 
-    second = ranked_intents[1]
+
+    # --------------------------------------------------------
+    # Second intent
+    # --------------------------------------------------------
+
+    if len(ranked_intents) > 1:
+
+        second = ranked_intents[1]
+
+    else:
+
+        second = (
+            "unknown",
+            0.0,
+            0.0
+        )
+
+
+    # --------------------------------------------------------
+    # UNKNOWN THRESHOLD
+    # --------------------------------------------------------
+
+    if best[1] < 0.20:
+
+        return (
+            "unknown",
+            best[1],
+            best[2],
+            second[0],
+            second[1]
+        )
 
 
     return (
@@ -159,7 +235,9 @@ if __name__ == "__main__":
 
     while True:
 
-        question = input("\nYou: ")
+        question = input(
+            "\nYou: "
+        )
 
 
         if question.lower().strip() == "exit":
@@ -173,25 +251,35 @@ if __name__ == "__main__":
             best_score,
             second_intent,
             second_score
-        ) = semantic_predict(question)
+        ) = semantic_predict(
+            question
+        )
 
 
         print(
             f"\nBest intent: {intent}"
         )
 
-        print(
-            f"Top-3 average: {average_score:.2%}"
-        )
 
         print(
-            f"Best pattern: {best_score:.2%}"
+            f"Top-3 average: "
+            f"{average_score:.2%}"
         )
 
-        print(
-            f"Second best: {second_intent}"
-        )
 
         print(
-            f"Second average: {second_score:.2%}"
+            f"Best pattern: "
+            f"{best_score:.2%}"
+        )
+
+
+        print(
+            f"Second best: "
+            f"{second_intent}"
+        )
+
+
+        print(
+            f"Second average: "
+            f"{second_score:.2%}"
         )

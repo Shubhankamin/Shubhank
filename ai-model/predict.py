@@ -2,21 +2,28 @@ import json
 import pickle
 import numpy as np
 
-from tensorflow.keras.models import load_model
-
 
 # ============================================================
-# LOAD MODEL
+# LOAD CLASSIFIER
 # ============================================================
 
-model = load_model("model/resume_model.keras")
+with open(
+    "model/resume_model.pkl",
+    "rb"
+) as file:
+
+    model = pickle.load(file)
 
 
 # ============================================================
 # LOAD VECTORIZER
 # ============================================================
 
-with open("model/vectorizer.pkl", "rb") as file:
+with open(
+    "model/vectorizer.pkl",
+    "rb"
+) as file:
+
     vectorizer = pickle.load(file)
 
 
@@ -24,7 +31,11 @@ with open("model/vectorizer.pkl", "rb") as file:
 # LOAD LABEL ENCODER
 # ============================================================
 
-with open("model/encoder.pkl", "rb") as file:
+with open(
+    "model/encoder.pkl",
+    "rb"
+) as file:
+
     encoder = pickle.load(file)
 
 
@@ -47,29 +58,43 @@ with open(
 
 def predict_intent(question):
 
-    # Convert text to TF-IDF vector
+    # Convert question to TF-IDF
+
     X = vectorizer.transform(
         [question]
-    ).toarray()
+    )
 
-    # Neural network prediction
-    probabilities = model.predict(
-        X,
-        verbose=0
+
+    # Get probabilities
+
+    probabilities = model.predict_proba(
+        X
     )[0]
 
+
     # Highest probability
-    index = np.argmax(probabilities)
+
+    index = np.argmax(
+        probabilities
+    )
+
+
+    # Convert index → intent
 
     intent = encoder.inverse_transform(
         [index]
     )[0]
 
+
     confidence = float(
         probabilities[index]
     )
 
-    return intent, confidence
+
+    return (
+        intent,
+        confidence
+    )
 
 
 # ============================================================
@@ -78,7 +103,10 @@ def predict_intent(question):
 
 def generate_response(question):
 
-    intent, confidence = predict_intent(question)
+    intent, confidence = predict_intent(
+        question
+    )
+
 
     # --------------------------------------------------------
     # UNKNOWN INTENT
@@ -94,23 +122,13 @@ def generate_response(question):
 
 
     # --------------------------------------------------------
-    # LOW CONFIDENCE
-    # --------------------------------------------------------
-
-    if confidence < 0.60:
-
-        return (
-            "I'm not confident enough to answer that. "
-            "Try asking about Shubhank's skills, experience, "
-            "education, projects or technologies."
-        ), intent, confidence
-
-
-    # --------------------------------------------------------
     # FIND RESUME ANSWER
     # --------------------------------------------------------
 
-    answer_data = resume_data.get(intent)
+    answer_data = resume_data.get(
+        intent
+    )
+
 
     if answer_data is None:
 
@@ -124,36 +142,60 @@ def generate_response(question):
         intent,
         confidence
     )
+
+
 # ============================================================
-# CHAT
+# TEST CHAT
 # ============================================================
 
 if __name__ == "__main__":
 
     print("=" * 60)
-    print("              SHUBHANK AI")
-    print("          RESUME ASSISTANT")
+
+    print(
+        "              SHUBHANK AI"
+    )
+
+    print(
+        "          RESUME ASSISTANT"
+    )
+
     print("=" * 60)
 
-    print("\nAsk me something about Shubhank.")
-    print("Type 'exit' to stop.\n")
+    print(
+        "\nAsk me something about Shubhank."
+    )
+
+    print(
+        "Type 'exit' to stop.\n"
+    )
+
 
     while True:
 
-        question = input("You: ")
+        question = input(
+            "You: "
+        )
+
 
         if question.lower().strip() == "exit":
 
-            print("\nAI: Goodbye!")
+            print(
+                "\nAI: Goodbye!"
+            )
+
             break
+
 
         answer, intent, confidence = generate_response(
             question
         )
 
+
         print(
             f"\nAI: {answer}"
         )
+
 
         print(
             f"\n[Intent: {intent} | "

@@ -7,6 +7,10 @@ from decision import decide
 from conversation import ConversationContext
 
 
+# ============================================================
+# FASTAPI APP
+# ============================================================
+
 app = FastAPI(
     title="Shubhank Resume AI",
     description="AI-powered resume assistant",
@@ -109,9 +113,16 @@ def chat(request: ChatRequest):
     # --------------------------------------------------------
 
     return {
+
         "session_id": session_id,
+
         "answer": result["answer"],
+
         "intent": result["intent"],
-        "confidence": result["neural_confidence"],
+
+        "confidence": result.get(
+            "neural_confidence"
+        ),
+
         "reason": result["reason"]
     }
