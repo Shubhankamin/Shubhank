@@ -118,8 +118,7 @@
 </template>
 
 <script setup>
-import { nextTick, ref } from "vue";
-
+import { nextTick, ref, watch, onBeforeUnmount } from "vue";
 const isOpen = ref(false);
 const input = ref("");
 const isTyping = ref(false);
@@ -145,6 +144,25 @@ const openChat = () => {
 const closeChat = () => {
   isOpen.value = false;
 };
+
+watch(isOpen, (open) => {
+  if (typeof document === "undefined") return;
+
+  if (open) {
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+  } else {
+    document.body.style.overflow = "";
+    document.body.style.touchAction = "";
+  }
+});
+
+onBeforeUnmount(() => {
+  if (typeof document === "undefined") return;
+
+  document.body.style.overflow = "";
+  document.body.style.touchAction = "";
+});
 
 const scrollToBottom = async () => {
   await nextTick();
@@ -364,7 +382,6 @@ const handleEnter = () => {
     0 0 50px rgba(211, 245, 118, 0.04);
 
   position: relative;
-
   overflow: hidden;
 }
 
@@ -886,25 +903,124 @@ const handleEnter = () => {
    MOBILE
 ========================================================= */
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
   .resume-ai {
     right: 16px;
     bottom: 16px;
+    z-index: 99999;
   }
+
+  /* Floating button */
 
   .ai-trigger {
     width: 58px;
     height: 58px;
   }
 
+  /* Chat window */
+
   .chat-window {
-    width: calc(100vw - 24px);
+    width: calc(100vw - 32px);
 
-    height: calc(100vh - 30px);
+    /*
+      Don't use almost the entire viewport height.
+      Keep it as a compact bottom-sheet style chat.
+    */
+    height: min(560px, 72dvh);
 
-    max-height: 680px;
+    min-height: 420px;
+
+    max-height: 72dvh;
 
     border-radius: 22px;
+
+    /*
+      Keep the chat above the bottom edge.
+    */
+    margin-bottom: 0;
+
+    /*
+      Prevent the chat itself from moving with
+      the document.
+    */
+    position: fixed;
+
+    right: 16px;
+    bottom: 16px;
+
+    /*
+      Make sure only the messages area scrolls.
+    */
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+  }
+
+  /*
+    The messages area is the ONLY scrollable
+    area inside the chatbot.
+  */
+
+  .messages {
+    min-height: 0;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  /*
+    Slightly reduce spacing on small screens.
+  */
+
+  .chat-header {
+    padding: 15px 16px;
+  }
+
+  .messages {
+    padding: 18px 14px;
+  }
+
+  .input-area {
+    margin: 0 12px;
+  }
+
+  .powered {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .chat-window {
+    width: calc(100vw - 24px);
+    right: 12px;
+    bottom: 12px;
+
+    height: 68dvh;
+    max-height: 520px;
+    min-height: 380px;
+
+    border-radius: 20px;
+  }
+
+  .resume-ai {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .message {
+    max-width: 88%;
+    font-size: 11px;
+  }
+
+  .welcome h2 {
+    font-size: 22px;
+  }
+
+  .welcome p {
+    font-size: 11px;
   }
 }
 
