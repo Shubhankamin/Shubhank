@@ -1,0 +1,123 @@
+{
+  "greeting": {
+    "answer": "Hi! I'm Shubhank's AI resume assistant. You can ask me about his skills, experience, education, projects, technologies, or how to contact him."
+  },
+
+  "skills": {
+    "answer": "Shubhank's technical skills include HTML, CSS, JavaScript, TypeScript, Vue 3, Nuxt 3, React, Next.js, Vuetify, PrimeVue, React Native, Node.js, Express, Firebase, PostgreSQL, Prisma and REST API integration."
+  },
+  "experience": {
+    "answer": "Shubhank has professional experience as a Front-End Developer at Exelon Circuits Private Limited, where he worked on modern web applications, responsive interfaces, e-commerce platforms, admin dashboards, and frontend systems. He has also gained practical experience through internships at Amdox Technologies and aiRender Technology, along with freelance development projects.",
+
+    "followups": {
+      "what_did_you_do": "At Exelon Circuits, Shubhank worked as a Front-End Developer, building responsive web applications, admin dashboards, e-commerce platforms, and modern user interfaces.",
+
+      "technologies": "At Exelon Circuits, Shubhank worked with modern frontend technologies including Vue 3, Nuxt 3, JavaScript, TypeScript and related UI libraries.",
+
+      "role": "Shubhank worked as a Front-End Developer at Exelon Circuits Private Limited. His work focused on building responsive web applications, user interfaces, dashboards and other frontend systems."
+    }
+  },
+
+  "education": {
+    "answer": "Shubhank is currently pursuing a Master of Computer Applications (MCA) at MIT Manipal. He previously completed his Bachelor of Computer Applications (BCA) in 2023."
+  },
+  "projects": {
+    "answer": "Shubhank has worked on projects including a Lost & Found platform, HealthStream mobile application, Vehicle Servicing application, Skin Saviour, Chat On, Agri Mart, FastMech and several interactive web experiences.",
+
+    "followups": {
+      "project_mobile": "Shubhank has worked on several mobile-focused projects, including the HealthStream application, Vehicle Servicing application, Skin Saviour and Chat On.",
+
+      "project_technologies": "For his mobile projects, Shubhank has worked with React Native, Expo, FlutterFlow, Firebase, Android Studio and API integration.",
+
+      "project_details": "Shubhank has worked on a range of web and mobile development projects."
+    },
+
+    "project_details": {
+      "healthstream": "HealthStream is a mobile application built using React Native and Expo. It includes image capture, draft management, video recording, media uploads, 3D model processing and report generation.",
+
+      "vehicle_servicing": "Shubhank built a Vehicle Servicing application using FlutterFlow and Firebase.",
+
+      "skin_saviour": "Skin Saviour is a mobile application developed using Android Studio and Firebase.",
+
+      "chat_on": "Chat On is a React Native chat application.",
+
+      "lost_found": "Shubhank developed a Lost & Found platform using Vue 3, Nuxt 3, Vuetify, PrimeVue, Firebase and Cloudinary.",
+
+      "agri_mart": "Agri Mart is a college mini project that provides a frontend e-commerce marketplace for farmers.",
+
+      "fastmech": "FastMech is one of Shubhank's application development projects."
+    },
+
+    "project_followups": {
+      "healthstream": {
+        "specific_project_technologies": "HealthStream uses React Native and Expo for the mobile application. It also involves media handling, local draft management, API integration, file uploads and backend processing.",
+
+        "specific_project_features": "HealthStream supports image capture, gallery uploads, draft saving and resuming, image preview and retake, video recording, media uploads, 3D model processing and report generation.",
+
+        "specific_project_workflow": "The HealthStream workflow allows users to capture or upload assessment media, save their work as a draft, upload the required files to the backend, process the assessment into a 3D model and generate a report."
+      },
+
+      "vehicle_servicing": {
+        "specific_project_technologies": "The Vehicle Servicing application was built using FlutterFlow and Firebase."
+      },
+
+      "skin_saviour": {
+        "specific_project_technologies": "Skin Saviour was developed using Android Studio and Firebase."
+      },
+
+      "chat_on": {
+        "specific_project_technologies": "Chat On was built using React Native."
+      },
+
+      "lost_found": {
+        "specific_project_technologies": "The Lost & Found platform uses Vue 3, Nuxt 3, Vuetify, PrimeVue, Firebase and Cloudinary."
+      },
+
+      "agri_mart": {
+        "specific_project_technologies": "Agri Mart was developed as a frontend e-commerce project."
+      },
+
+      "fastmech": {
+        "specific_project_technologies": "FastMech is an application development project."
+      }
+    }
+  },
+  "web_development": {
+    "answer": "Shubhank has professional experience building responsive websites, e-commerce platforms, admin dashboards, portfolio websites, real-estate platforms and database-driven web applications."
+  },
+
+  "frontend": {
+    "answer": "Shubhank specializes in modern frontend development using Vue 3, Nuxt 3, JavaScript, TypeScript, Vuetify, PrimeVue, React and Next.js. He has experience building responsive interfaces, dashboards, e-commerce applications and interactive web experiences."
+  },
+
+  "backend": {
+    "answer": "Shubhank has worked with Node.js, Express, REST APIs, Firebase, PostgreSQL and Prisma. He has experience integrating APIs, working with databases and developing backend services for web and mobile applications."
+  },
+
+  "mobile": {
+    "answer": "Shubhank has mobile development experience with React Native, Expo, FlutterFlow, Firebase and Android Studio. He has worked on applications involving authentication, data storage, API integration, media uploads and other mobile features."
+  },
+
+  "ai_ml": {
+    "answer": "Shubhank is currently expanding his skills toward AI, machine learning and generative AI. This resume assistant is one of his projects for learning and implementing machine learning concepts from scratch."
+  },
+
+  "internships": {
+    "answer": "Shubhank has gained internship experience at Amdox Technologies and aiRender Technology. At Amdox Technologies, he worked as a Web Development Intern, and at aiRender Technology, he worked as a Full-Stack App Development Intern.",
+
+    "followups": {
+      "what_did_you_do": "At Amdox Technologies, Shubhank worked on web development projects. At aiRender Technology, he has been working on full-stack application development, including frontend development, API integration, mobile application work and other application features.",
+
+      "technologies": "During his internships, Shubhank has worked with technologies including Vue 3, Nuxt 3, React Native, Expo, JavaScript, TypeScript, REST APIs, Firebase, PostgreSQL and other modern development tools.",
+
+      "role": "At Amdox Technologies, Shubhank worked as a Web Development Intern. At aiRender Technology, he works as a Full-Stack App Development Intern."
+    }
+  },
+  "resume": {
+    "answer": "You can download Shubhank's resume from the resume button on this portfolio website."
+  },
+
+  "contact": {
+    "answer": "You can connect with Shubhank through LinkedIn or GitHub using the social links available on his portfolio website."
+  }
+}

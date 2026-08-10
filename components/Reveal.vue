@@ -477,7 +477,7 @@ onBeforeUnmount(() => {
 .letter-slot {
   position: relative;
 
-  width: clamp(48px, 7vw, 125px);
+  width: clamp(45px, 7vw, 125px);
 
   height: clamp(150px, 20vw, 330px);
 
@@ -523,7 +523,7 @@ onBeforeUnmount(() => {
 
   font-size: clamp(8rem, 17vw, 16rem);
 
-  font-weight: 200;
+  font-weight: 100;
 
   line-height: 0.72;
 

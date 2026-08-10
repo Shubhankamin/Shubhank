@@ -1,0 +1,295 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Hi there",
+        "Hello Shubhank",
+        "Hey Shubhank",
+        "Who are you?",
+        "Who is Shubhank?",
+        "Tell me about yourself",
+        "Can you introduce yourself?",
+        "I want to know about Shubhank",
+        "What can you tell me about yourself?",
+        "Give me a quick introduction",
+        "Tell me who you are",
+        "Start"
+      ]
+    },
+
+    {
+      "tag": "skills",
+      "patterns": [
+        "What are your technical skills?",
+        "What technologies do you know?",
+        "What is your tech stack?",
+        "Tell me about your skills",
+        "What programming languages do you know?",
+        "Which technologies have you worked with?",
+        "What tools do you use?",
+        "What are your main technical abilities?",
+        "What technologies are you experienced in?",
+        "Which programming technologies do you know?",
+        "What frameworks do you know?",
+        "Tell me about your technical background",
+        "What is your technology stack?",
+        "Which development technologies have you used?",
+        "What are Shubhank's technical skills?"
+      ]
+    },
+
+    {
+      "tag": "experience",
+      "patterns": [
+        "Where have you worked before?",
+        "Where have you worked?",
+        "Where did you work?",
+        "Which companies have you worked for?",
+        "Which companies have you worked with?",
+        "What companies have you worked at?",
+        "Tell me about your work experience",
+        "Tell me about your professional experience",
+        "Tell me about your previous work",
+        "What is your professional background?",
+        "What is your work background?",
+        "Where did you work previously?",
+        "What professional experience do you have?",
+        "Can you tell me about your career experience?",
+        "What jobs have you had?",
+        "Where have you gained work experience?"
+      ]
+    },
+
+    {
+      "tag": "education",
+      "patterns": [
+        "What is your educational background?",
+        "Where did you study?",
+        "What are you studying?",
+        "Tell me about your education",
+        "What degree are you pursuing?",
+        "Which college do you attend?",
+        "What is your qualification?",
+        "What did you study?",
+        "Tell me about your academic background",
+        "What course are you currently doing?",
+        "Are you pursuing a master's degree?",
+        "What is your current degree?",
+        "Where are you currently studying?",
+        "What is your academic qualification?",
+        "Tell me about your studies"
+      ]
+    },
+
+    {
+      "tag": "projects",
+      "patterns": [
+        "What projects have you built?",
+        "Tell me about your projects",
+        "What projects have you worked on?",
+        "Which projects have you developed?",
+        "Show me your projects",
+        "What applications have you built?",
+        "Tell me about your portfolio projects",
+        "What software projects have you created?",
+        "Which projects are you most experienced with?",
+        "What kind of applications have you developed?",
+        "Can you explain your projects?",
+        "What are your main projects?",
+        "Tell me about the applications you built",
+        "What development projects have you worked on?",
+        "Which projects are in your portfolio?"
+      ]
+    },
+    {
+      "tag": "web_development",
+      "patterns": [
+        "Can you build websites?",
+        "Do you develop websites?",
+        "Can you develop web applications?",
+        "Do you build web applications?",
+        "What kind of websites do you build?",
+        "Do you have web development experience?",
+        "Tell me about your web development experience",
+        "Can you create responsive websites?",
+        "Have you developed web applications?",
+        "What type of web applications have you built?",
+        "Do you work as a web developer?",
+        "Are you experienced in web development?",
+        "Can you build modern websites?",
+        "What kind of web development do you do?",
+        "Have you worked on web projects?"
+      ]
+    },
+
+    {
+      "tag": "frontend",
+      "patterns": [
+        "What frontend technologies do you know?",
+        "Do you know Vue?",
+        "Do you work with Nuxt?",
+        "Tell me about your frontend experience",
+        "What frontend frameworks have you used?",
+        "Do you have Vue experience?",
+        "Have you worked with Nuxt 3?",
+        "What UI technologies do you use?",
+        "What frontend frameworks do you know?",
+        "Are you experienced with Vue 3?",
+        "What frontend projects have you built?",
+        "Do you know JavaScript?",
+        "Do you know TypeScript?",
+        "Have you worked with responsive UI?",
+        "What is your frontend development experience?"
+      ]
+    },
+
+    {
+      "tag": "backend",
+      "patterns": [
+        "What backend technologies do you know?",
+        "Do you know Node.js?",
+        "Do you work with databases?",
+        "Tell me about your backend experience",
+        "What backend technologies have you used?",
+        "Do you have API development experience?",
+        "Have you worked with REST APIs?",
+        "What databases have you worked with?",
+        "Have you built backend applications?",
+        "Do you know Express?",
+        "Have you worked with PostgreSQL?",
+        "Do you know Prisma?",
+        "Have you integrated APIs?",
+        "What backend tools have you used?",
+        "Tell me about your server-side experience"
+      ]
+    },
+
+    {
+      "tag": "mobile",
+      "patterns": [
+        "Do you develop mobile applications?",
+        "Do you know React Native?",
+        "Have you built mobile apps?",
+        "Tell me about your mobile development experience",
+        "What mobile technologies do you know?",
+        "Have you worked with Expo?",
+        "Can you develop Android applications?",
+        "Have you created apps using React Native?",
+        "What mobile app projects have you built?",
+        "Do you have experience with Flutter?",
+        "Have you used FlutterFlow?",
+        "Can you build cross-platform applications?",
+        "Tell me about your mobile projects",
+        "What technologies have you used for mobile development?",
+        "Have you worked on application development?"
+      ]
+    },
+
+    {
+      "tag": "ai_ml",
+      "patterns": [
+        "Are you interested in AI?",
+        "Are you learning machine learning?",
+        "Do you know machine learning?",
+        "Are you working with AI?",
+        "Tell me about your AI interests",
+        "What are your interests in artificial intelligence?",
+        "Are you learning AI?",
+        "Do you want to work in AI?",
+        "Are you interested in generative AI?",
+        "What is your experience with machine learning?",
+        "Are you exploring GenAI?",
+        "What are you currently learning in AI?",
+        "Are you planning to become an AI engineer?",
+        "Tell me about your machine learning interests",
+        "What is your AI background?"
+      ]
+    },
+
+    {
+      "tag": "internships",
+      "patterns": [
+        "Where did you intern?",
+        "Where have you interned?",
+        "What internships have you done?",
+        "Tell me about your internships",
+        "Which companies did you intern at?",
+        "Where did you complete your internship?",
+        "What internship experience do you have?",
+        "Which internships have you completed?",
+        "Tell me about your internship experience"
+      ]
+    },
+
+    {
+      "tag": "resume",
+      "patterns": [
+        "Can I see your resume?",
+        "Where can I download your resume?",
+        "Show me your CV",
+        "Can I download your resume?",
+        "I want to see your resume",
+        "Give me your resume",
+        "Where is your CV?",
+        "Can I get your CV?",
+        "I want to download your CV",
+        "How can I get your resume?",
+        "Do you have a resume?",
+        "Can I view your resume?",
+        "Where can I find your resume?",
+        "Give me the link to your resume",
+        "Open your resume"
+      ]
+    },
+
+    {
+      "tag": "contact",
+      "patterns": [
+        "How can I contact you?",
+        "How can I reach you?",
+        "Where can I find you?",
+        "Can I contact you?",
+        "What are your social profiles?",
+        "How can I connect with you?",
+        "Where can I find your LinkedIn?",
+        "What is your GitHub?",
+        "Can I get your LinkedIn profile?",
+        "Can I get your GitHub profile?",
+        "How do I get in touch with you?",
+        "Where can I contact Shubhank?",
+        "What are your contact details?",
+        "How can a recruiter reach you?",
+        "Where are your professional profiles?"
+      ]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [
+        "What is the capital of France?",
+        "What is the weather today?",
+        "Tell me a joke",
+        "Who is Elon Musk?",
+        "What is the population of India?",
+        "How do I cook pasta?",
+        "What is 25 multiplied by 4?",
+        "Who won the cricket match?",
+        "Explain quantum physics",
+        "What is the latest news?",
+        "Tell me about artificial intelligence",
+        "How does Bitcoin work?",
+        "What is Python?",
+        "What is the meaning of life?",
+        "Can you translate this sentence?",
+        "Write me a poem",
+        "Help me solve this math problem",
+        "What is the capital of Japan?",
+        "What is the temperature outside?",
+        "Tell me something interesting"
+      ]
+    }
+  ]
+}
