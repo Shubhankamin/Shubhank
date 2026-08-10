@@ -125,7 +125,9 @@ const input = ref("");
 const isTyping = ref(false);
 
 const sessionId = ref(localStorage.getItem("aura_session_id") || null);
+const config = useRuntimeConfig();
 
+const API_URL = config.public.apiBase;
 const messages = ref([]);
 const messagesContainer = ref(null);
 
@@ -171,7 +173,7 @@ const sendMessage = async (suggestion = null) => {
   isTyping.value = true;
 
   try {
-    const response = await $fetch("http://127.0.0.1:8000/chat", {
+    const response = await $fetch(`${API_URL}/chat`, {
       method: "POST",
 
       body: {
