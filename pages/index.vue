@@ -71,6 +71,8 @@
     <section id="connect" class="reveal-section">
       <Connect />
     </section>
+
+    <ResumeAI />
   </div>
 </template>
 
@@ -106,6 +108,7 @@ import { onMounted, ref } from "vue";
 import { useScrollAurora } from "~/composables/useScrollAurora";
 import { useMouseFollower } from "~/composables/useMouseFollower";
 import Reveal from "~/components/Reveal.vue";
+import ResumeAI from "~/components/ResumeAI.vue";
 useScrollAurora();
 useMouseFollower();
 
