@@ -228,7 +228,6 @@ const handleEnter = () => {
   sendMessage();
 };
 </script>
-
 <style scoped>
 /* =========================================================
    CONTAINER
@@ -815,7 +814,7 @@ const handleEnter = () => {
 
   color: white;
 
-  font-size: 12px;
+  font-size: 16px; /* fixed: was 12px, which triggers iOS auto-zoom on focus */
 }
 
 .input-area input::placeholder {
@@ -898,10 +897,6 @@ const handleEnter = () => {
 
   transform: translateY(20px) scale(0.92);
 }
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 /* =========================================================
    MOBILE
