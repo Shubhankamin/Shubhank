@@ -1,7 +1,6 @@
 import json
 
 from predict import predict_intent
-from semantic import semantic_predict
 from conversation import ConversationContext
 from context import detect_followup, detect_project
 
@@ -17,6 +16,32 @@ with open(
 ) as file:
 
     resume_data = json.load(file)
+
+
+# ============================================================
+# PROJECT NAMES
+# ============================================================
+
+PROJECT_NAMES = [
+    "healthstream",
+    "vehicle_servicing",
+    "skin_saviour",
+    "chat_on",
+    "lost_found",
+    "agri_mart",
+    "fastmech"
+]
+
+
+# ============================================================
+# GENERIC UNKNOWN RESPONSE
+# ============================================================
+
+UNKNOWN_ANSWER = (
+    "I'm designed to answer questions about "
+    "Shubhank's skills, experience, education, "
+    "projects and professional background."
+)
 
 
 # ============================================================
@@ -37,6 +62,12 @@ def decide(question, conversation):
 
     # ========================================================
     # 1. CHECK FOR SPECIFIC PROJECT
+    #
+    # Example:
+    #
+    # Tell me about HealthStream
+    # Tell me about Vehicle Servicing
+    # Tell me about Chat On
     # ========================================================
 
     project_name = detect_project(question)
@@ -71,19 +102,20 @@ def decide(question, conversation):
 
             return {
                 "answer": project_answer,
+
                 "intent": "projects",
 
                 "neural_intent": None,
                 "neural_confidence": None,
 
-                "semantic_intent": "projects",
-                "semantic_score": 1.0,
-                "semantic_best": "projects",
+                "semantic_intent": None,
+                "semantic_score": None,
+                "semantic_best": None,
 
                 "semantic_second": None,
-                "semantic_second_score": 0.0,
+                "semantic_second_score": None,
 
-                "semantic_margin": 1.0,
+                "semantic_margin": None,
 
                 "reason":
                     "Specific project identified from conversation"
@@ -99,21 +131,21 @@ def decide(question, conversation):
 
     # ========================================================
     # 2A. SPECIFIC PROJECT FOLLOW-UP
+    #
+    # Example:
+    #
+    # Tell me about HealthStream
+    #
+    # What features does it have?
+    #
+    # What technologies did you use for it?
     # ========================================================
 
     if (
         followup_type
         and previous_intent == "projects"
         and previous_topic
-        and previous_topic in [
-            "healthstream",
-            "vehicle_servicing",
-            "skin_saviour",
-            "chat_on",
-            "lost_found",
-            "agri_mart",
-            "fastmech"
-        ]
+        and previous_topic in PROJECT_NAMES
     ):
 
         project_data = resume_data.get(
@@ -150,19 +182,20 @@ def decide(question, conversation):
 
                 return {
                     "answer": followup_answer,
+
                     "intent": "projects",
 
                     "neural_intent": None,
                     "neural_confidence": None,
 
-                    "semantic_intent": "projects",
-                    "semantic_score": 1.0,
-                    "semantic_best": "projects",
+                    "semantic_intent": None,
+                    "semantic_score": None,
+                    "semantic_best": None,
 
                     "semantic_second": None,
-                    "semantic_second_score": 0.0,
+                    "semantic_second_score": None,
 
-                    "semantic_margin": 1.0,
+                    "semantic_margin": None,
 
                     "reason":
                         "Project follow-up resolved using project context"
@@ -171,6 +204,14 @@ def decide(question, conversation):
 
     # ========================================================
     # 2B. GENERIC PROJECT FOLLOW-UP
+    #
+    # Example:
+    #
+    # What projects have you built?
+    #
+    # Which one was a mobile app?
+    #
+    # What technologies did you use?
     # ========================================================
 
     if (
@@ -223,19 +264,20 @@ def decide(question, conversation):
 
             return {
                 "answer": followup_answer,
+
                 "intent": "projects",
 
                 "neural_intent": None,
                 "neural_confidence": None,
 
-                "semantic_intent": "projects",
-                "semantic_score": 1.0,
-                "semantic_best": "projects",
+                "semantic_intent": None,
+                "semantic_score": None,
+                "semantic_best": None,
 
                 "semantic_second": None,
-                "semantic_second_score": 0.0,
+                "semantic_second_score": None,
 
-                "semantic_margin": 1.0,
+                "semantic_margin": None,
 
                 "reason":
                     "Follow-up question resolved using conversation context"
@@ -244,6 +286,14 @@ def decide(question, conversation):
 
     # ========================================================
     # 2C. GENERIC EXPERIENCE / INTERNSHIP FOLLOW-UP
+    #
+    # Example:
+    #
+    # Where have you worked before?
+    #
+    # What did you do there?
+    #
+    # What technologies did you use there?
     # ========================================================
 
     if (
@@ -281,19 +331,20 @@ def decide(question, conversation):
 
                 return {
                     "answer": followup_answer,
+
                     "intent": previous_intent,
 
                     "neural_intent": None,
                     "neural_confidence": None,
 
-                    "semantic_intent": previous_intent,
-                    "semantic_score": 1.0,
-                    "semantic_best": previous_intent,
+                    "semantic_intent": None,
+                    "semantic_score": None,
+                    "semantic_best": None,
 
                     "semantic_second": None,
-                    "semantic_second_score": 0.0,
+                    "semantic_second_score": None,
 
-                    "semantic_margin": 1.0,
+                    "semantic_margin": None,
 
                     "reason":
                         "Follow-up question resolved using conversation context"
@@ -301,7 +352,13 @@ def decide(question, conversation):
 
 
     # ========================================================
-    # 3. NORMAL ML PIPELINE
+    # 3. NORMAL LIGHTWEIGHT ML PIPELINE
+    #
+    # No Sentence Transformers.
+    # No TensorFlow.
+    # No PyTorch.
+    #
+    # Uses the lightweight classifier from predict.py.
     # ========================================================
 
     neural_intent, neural_confidence = predict_intent(
@@ -310,98 +367,38 @@ def decide(question, conversation):
 
 
     # ========================================================
-    # SEMANTIC MODEL
+    # 4. CLASSIFIER DECISION
     # ========================================================
 
-    (
-        semantic_intent,
-        semantic_average,
-        semantic_best,
-        second_intent,
-        second_average
-    ) = semantic_predict(question)
-
-
-    # ========================================================
-    # SEMANTIC MARGIN
-    # ========================================================
-
-    semantic_margin = (
-        semantic_average - second_average
-    )
-
-
-    # ========================================================
-    # RULE 1 — VERY STRONG NEURAL PREDICTION
-    # ========================================================
-
-    if neural_confidence >= 0.85:
-
-        final_intent = neural_intent
-
-        reason = "Strong neural prediction"
-
-
-    # ========================================================
-    # RULE 2 — SEMANTIC MODEL SAYS UNKNOWN
-    # ========================================================
-
-    elif semantic_intent == "unknown":
+    if neural_intent == "unknown":
 
         final_intent = "unknown"
 
-        reason = "Semantic model detected unknown domain"
+        reason = "Classifier detected unknown domain"
 
 
-    # ========================================================
-    # RULE 3 — STRONG SEMANTIC MATCH
-    # ========================================================
-
-    elif (
-        semantic_average >= 0.65
-        and semantic_margin >= 0.08
-    ):
-
-        final_intent = semantic_intent
-
-        reason = "Strong semantic match"
-
-
-    # ========================================================
-    # RULE 4 — BOTH MODELS AGREE
-    # ========================================================
-
-    elif neural_intent == semantic_intent:
+    elif neural_confidence >= 0.15:
 
         final_intent = neural_intent
 
-        reason = "Both models agree"
+        reason = "Lightweight classifier prediction"
 
-
-    # ========================================================
-    # RULE 5 — LOW CONFIDENCE / DISAGREEMENT
-    # ========================================================
 
     else:
 
         final_intent = "unknown"
 
-        reason = (
-            "Models disagree or confidence is too low"
-        )
+        reason = "Classifier confidence is too low"
 
 
     # ========================================================
-    # GENERATE RESPONSE
+    # 5. GENERATE RESPONSE
     # ========================================================
 
     if final_intent == "unknown":
 
-        answer = (
-            "I'm designed to answer questions about "
-            "Shubhank's skills, experience, education, "
-            "projects and professional background."
-        )
+        answer = UNKNOWN_ANSWER
+
 
     else:
 
@@ -414,6 +411,7 @@ def decide(question, conversation):
 
             answer = answer_data["answer"]
 
+
         else:
 
             answer = (
@@ -422,10 +420,10 @@ def decide(question, conversation):
 
 
     # ========================================================
-    # UPDATE CONVERSATION CONTEXT
+    # 6. UPDATE CONVERSATION CONTEXT
     #
-    # Normal ML responses do not have a specific topic.
-    # This clears any previous project topic.
+    # Normal ML questions do not have a specific topic.
+    # Therefore topic is cleared.
     # ========================================================
 
     conversation.update(
@@ -437,24 +435,30 @@ def decide(question, conversation):
 
 
     # ========================================================
-    # RETURN RESULT
+    # 7. RETURN RESULT
     # ========================================================
 
     return {
+
         "answer": answer,
+
         "intent": final_intent,
 
         "neural_intent": neural_intent,
+
         "neural_confidence": neural_confidence,
 
-        "semantic_intent": semantic_intent,
-        "semantic_score": semantic_average,
-        "semantic_best": semantic_best,
+        "semantic_intent": None,
 
-        "semantic_second": second_intent,
-        "semantic_second_score": second_average,
+        "semantic_score": None,
 
-        "semantic_margin": semantic_margin,
+        "semantic_best": None,
+
+        "semantic_second": None,
+
+        "semantic_second_score": None,
+
+        "semantic_margin": None,
 
         "reason": reason
     }
@@ -466,34 +470,71 @@ def decide(question, conversation):
 
 if __name__ == "__main__":
 
-    # Create ONE context for this terminal session
+    # --------------------------------------------------------
+    # Create one conversation context for this terminal session
+    # --------------------------------------------------------
+
     conversation = ConversationContext()
 
 
     print("=" * 60)
-    print("              SHUBHANK AI")
-    print("          RESUME ASSISTANT")
+
+    print(
+        "              SHUBHANK AI"
+    )
+
+    print(
+        "          RESUME ASSISTANT"
+    )
+
     print("=" * 60)
 
-    print("\nAsk me something about Shubhank.")
-    print("Type 'exit' to stop.\n")
 
+    print(
+        "\nAsk me something about Shubhank."
+    )
+
+    print(
+        "Type 'exit' to stop.\n"
+    )
+
+
+    # ========================================================
+    # CHAT LOOP
+    # ========================================================
 
     while True:
 
-        question = input("You: ").strip()
+        question = input(
+            "You: "
+        ).strip()
 
+
+        # ----------------------------------------------------
+        # EXIT
+        # ----------------------------------------------------
 
         if question.lower() == "exit":
 
-            print("\nAI: Goodbye!")
+            print(
+                "\nAI: Goodbye!"
+            )
+
             break
 
+
+        # ----------------------------------------------------
+        # EMPTY INPUT
+        # ----------------------------------------------------
 
         if not question:
 
             continue
 
+
+        # ----------------------------------------------------
+        # DECISION ENGINE
+        # ----------------------------------------------------
 
         result = decide(
             question,
@@ -501,6 +542,93 @@ if __name__ == "__main__":
         )
 
 
+        # ----------------------------------------------------
+        # ANSWER
+        # ----------------------------------------------------
+
         print(
             f"\nAI: {result['answer']}\n"
+        )
+
+
+        # ----------------------------------------------------
+        # MODEL ANALYSIS
+        # ----------------------------------------------------
+
+        print(
+            "---------------- MODEL ANALYSIS ----------------"
+        )
+
+
+        print(
+            f"Classifier intent: "
+            f"{result['neural_intent']}"
+        )
+
+
+        if result["neural_confidence"] is not None:
+
+            print(
+                f"Classifier confidence: "
+                f"{result['neural_confidence']:.2%}"
+            )
+
+        else:
+
+            print(
+                "Classifier confidence: "
+                "Not used"
+            )
+
+
+        print(
+            f"Final intent: "
+            f"{result['intent']}"
+        )
+
+
+        print(
+            f"Decision: "
+            f"{result['reason']}"
+        )
+
+
+        # ----------------------------------------------------
+        # CONVERSATION CONTEXT
+        # ----------------------------------------------------
+
+        context = conversation.get_context()
+
+
+        print(
+            "\n---------------- CONVERSATION CONTEXT ----------------"
+        )
+
+
+        print(
+            f"Last question: "
+            f"{context['last_question']}"
+        )
+
+
+        print(
+            f"Last intent: "
+            f"{context['last_intent']}"
+        )
+
+
+        print(
+            f"Last topic: "
+            f"{context.get('last_topic')}"
+        )
+
+
+        print(
+            f"Last answer: "
+            f"{context['last_answer']}"
+        )
+
+
+        print(
+            "--------------------------------------------------------"
         )
