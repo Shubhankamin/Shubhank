@@ -732,72 +732,220 @@ const getCardClass = (index) => {
   }
 }
 
-/* =========================================================
+/* =========================================
    MOBILE
-========================================================= */
+========================================= */
 
 @media (max-width: 650px) {
-  .projects-container {
-    padding-top: 55px;
+  .projects-section {
+    width: 100%;
   }
 
+  .projects-container {
+    width: 100%;
+    padding-top: 55px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* HEADER */
+
   .projects-header {
-    padding: 0 20px 40px;
+    display: block;
+    padding: 0 20px 45px;
+  }
+
+  .header-left {
+    width: 100%;
+  }
+
+  .section-label {
+    margin-bottom: 16px;
   }
 
   .projects-heading {
-    font-size: 62px;
+    font-size: clamp(56px, 17vw, 72px);
+    line-height: 0.8;
   }
 
+  .header-right {
+    width: 100%;
+    max-width: none;
+    margin-top: 30px;
+  }
+
+  .header-right p {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .project-count {
+    margin-top: 22px;
+  }
+
+  /* =========================================
+     PROJECT GRID
+  ========================================= */
+
   .projects-grid {
-    grid-template-columns: 1fr;
-
-    grid-auto-rows: 400px;
-
-    gap: 15px;
-
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
     padding: 0 20px;
   }
 
+  /* =========================================
+     CARDS
+  ========================================= */
+
+  .project-card,
   .card-large,
   .card-medium,
   .card-full {
-    grid-column: span 1;
-  }
+    position: relative;
 
-  .project-card {
+    width: 100%;
+    height: 430px;
+    min-height: 430px;
+
+    flex: none;
+
+    grid-column: auto;
+
     border-radius: 22px;
   }
 
+  /* =========================================
+     IMAGE
+  ========================================= */
+
+  .project-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100% !important;
+  }
+
+  /* =========================================
+     TOP
+  ========================================= */
+
+  .card-top {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .project-index {
+    width: 34px;
+    height: 34px;
+    font-size: 9px;
+  }
+
+  .project-year {
+    padding: 6px 9px;
+    font-size: 8px;
+  }
+
+  /* =========================================
+     CONTENT
+  ========================================= */
+
   .card-content {
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+
+    width: auto;
+  }
+
+  .card-meta {
+    margin-bottom: 7px;
+    font-size: 8px;
   }
 
   .project-title {
+    max-width: 100%;
     font-size: 30px;
+    line-height: 0.95;
   }
 
   .project-description {
+    max-width: 100%;
+    margin-top: 10px;
+
     font-size: 11px;
+    line-height: 1.6;
   }
 
+  /* =========================================
+     TECH STACK
+  ========================================= */
+
   .tech-stack {
+    display: flex;
+
+    margin-top: 14px;
+
     opacity: 1;
     transform: none;
+  }
+
+  .tech-tag {
+    padding: 4px 7px;
+    font-size: 7px;
+  }
+
+  /* =========================================
+     ACTION
+  ========================================= */
+
+  .project-action {
+    position: static;
+
+    margin-top: 15px;
   }
 
   .project-link {
+    width: fit-content;
+
     opacity: 1;
     transform: none;
+
+    font-size: 8px;
   }
 
+  .arrow-circle {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* =========================================
+     FOOTER
+  ========================================= */
+
   .projects-footer {
-    margin-left: 20px;
-    margin-right: 20px;
+    display: flex;
+
+    width: auto;
+
+    margin: 25px 20px 0;
+    padding-top: 18px;
+
+    gap: 12px;
 
     flex-wrap: wrap;
+
+    font-size: 8px;
+  }
+
+  .footer-line {
+    min-width: 30px;
   }
 }
 </style>

@@ -37,7 +37,8 @@
       <span class="particle particle-3"></span>
     </div>
 
-    <Nav />
+    <!-- <Nav /> -->
+     <NewNav />
 
     <v-container fluid class="about-container px-5 px-md-15">
       <!-- =========================================
@@ -118,21 +119,68 @@
            IMAGE + PROFILE
       ========================================== -->
 
-      <section class="profile-section">
-        <div class="profile-image" data-aos="fade-up" data-aos-duration="1200">
-          <v-img
-            src="/images/me/me_8.jpeg"
-            lazy-src="/images/me/me_8_lazy.jpeg"
-            width="100%"
-            height="auto"
-            contain
-          />
+      <section
+        class="profile-section d-none d-md-flex"
+        data-aos="fade-up"
+        data-aos-duration="1200"
+      >
+        <!-- <div class="profile-image" data-aos="fade-up" data-aos-duration="1200"> -->
+        <v-img src="/images/me/me_8.jpeg" alt="Shubhank Amin" loading="lazy" />
 
-          <div class="image-label">
+        <!-- <div class="image-label">
+          <span>SHUBHANK AMIN</span>
+          <span>FULL STACK DEVELOPER</span>
+        </div> -->
+        <!-- </div> -->
+
+        <div
+          class="profile-copy"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+          data-aos-delay="150"
+        >
+          <div class="section-label small">
+            <span>02</span>
+            <span>MY STORY</span>
+          </div>
+
+          <p class="story-lead manrope-Bold-h4">
+            I build interfaces where technology and visual design work together.
+          </p>
+
+          <p class="story-text manrope-regular-h5">
+            I am a Full Stack Developer currently pursuing a Master of Computer
+            Applications at MIT Manipal, with professional experience across
+            startup, freelance, and internship environments.
+          </p>
+
+          <p class="story-text manrope-regular-h5">
+            My work revolves around building scalable web applications, admin
+            dashboards, e-commerce platforms, and responsive interfaces. I enjoy
+            taking an idea from its early visual concept through development and
+            into a polished, production-ready experience.
+          </p>
+
+          <p class="story-text manrope-regular-h5">
+            I am particularly interested in modern frontend architecture,
+            interaction design, performance optimization, and creating
+            interfaces that feel simple without becoming ordinary.
+          </p>
+        </div>
+      </section>
+
+      <section class="profile-section d-block d-md-none">
+        <v-img
+          src="/images/me/me_8.jpeg"
+          alt="Shubhank Amin"
+          cover
+          loading="lazy"
+        />
+
+        <!-- <div class="image-label">
             <span>SHUBHANK AMIN</span>
             <span>FULL STACK DEVELOPER</span>
-          </div>
-        </div>
+          </div> -->
 
         <div
           class="profile-copy"
@@ -443,6 +491,7 @@ const downloadResume = () => {
 
 .about-intro {
   padding: 50px 0 130px;
+  /* padding-bottom: 130px; */
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -587,7 +636,7 @@ const downloadResume = () => {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.profile-image {
+/* .profile-image {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -609,6 +658,25 @@ const downloadResume = () => {
 .profile-image:hover :deep(.v-img__img) {
   transform: scale(1.015);
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+} */
+
+.profile-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.profile-image:hover .profile-photo {
+  transform: scale(1.015);
 }
 
 .image-label {

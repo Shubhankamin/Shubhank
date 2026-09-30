@@ -869,7 +869,7 @@ function handleView(card) {
 
   color: rgba(255, 255, 255, 0.42);
 
-  font-size: 10px;
+  font-size: 12px;
 
   line-height: 1.5;
 }
@@ -1217,7 +1217,6 @@ function handleView(card) {
 @media (max-width: 768px) {
   .specialized-section {
     padding-top: 35px;
-
     padding-bottom: 60px;
   }
 
@@ -1235,40 +1234,148 @@ function handleView(card) {
 
   .section-subtitle {
     margin-top: 20px;
-
     font-size: 13px;
+    line-height: 1.7;
   }
 
   .heading-divider {
     margin-top: 22px;
   }
 
+  /* CARD */
   .service-card {
+    width: 100%;
     max-width: 420px;
-
-    height: 510px;
-
+    height: 430px;
     transform: none !important;
   }
 
+  .card-face {
+    border-radius: 22px;
+  }
+
+  /* IMAGE */
   .image-area {
-    height: 58%;
+    height: 54%;
+    flex-shrink: 0;
+  }
+
+  .service-image {
+    object-fit: contain;
+  }
+
+  .image-label {
+    top: 14px;
+    left: 16px;
+    width: 34px;
+    height: 34px;
+    font-size: 9px;
+  }
+
+  /* FRONT CONTENT */
+  .front-content {
+    flex: none;
+    height: auto;
+    margin-top: -10px;
+    padding: 0 20px 18px;
+  }
+
+  .front-top {
+    margin-bottom: 8px;
+  }
+
+  .category {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .year {
+    font-size: 7px;
   }
 
   .front-title {
-    font-size: 27px;
+    font-size: 26px;
+    line-height: 0.95;
+  }
+
+  /* IMPORTANT:
+     Do not push footer to bottom on mobile */
+  .front-footer {
+    margin-top: 24px;
+    padding-top: 14px;
+    gap: 12px;
   }
 
   .front-description {
-    max-width: 190px;
+    max-width: 200px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .flip-action {
+    font-size: 7px;
+    gap: 6px;
+  }
+
+  .action-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  /* BACK */
+  .card-back {
+    padding: 22px;
   }
 
   .back-content {
-    margin-top: 35px;
+    margin-top: 28px;
+  }
+
+  .back-category {
+    font-size: 8px;
   }
 
   .back-title {
-    font-size: 26px;
+    font-size: 25px;
+    line-height: 0.95;
+  }
+
+  .back-line {
+    margin-top: 18px;
+  }
+
+  .back-description {
+    margin-top: 16px;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .details {
+    margin-top: 22px;
+  }
+
+  .detail-row {
+    grid-template-columns: 65px 1fr;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .detail-label {
+    font-size: 7px;
+  }
+
+  .detail-value,
+  .technology-list span {
+    font-size: 8px;
+  }
+
+  .back-footer {
+    padding-top: 14px;
+  }
+
+  .back-note {
+    font-size: 6px;
   }
 }
 
@@ -1279,44 +1386,69 @@ function handleView(card) {
 @media (max-width: 450px) {
   .specialized-section {
     padding-left: 5px;
-
     padding-right: 5px;
   }
 
   .service-card {
-    height: 500px;
+    height: 410px;
   }
 
   .image-area {
-    height: 56%;
+    height: 53%;
   }
 
   .front-content {
-    padding: 0 20px 20px;
+    margin-top: -8px;
+    padding: 0 18px 16px;
   }
 
   .front-title {
-    font-size: 25px;
+    font-size: 24px;
+  }
+
+  .front-footer {
+    margin-top: 20px;
+    padding-top: 16px;
   }
 
   .front-description {
-    font-size: 9px;
+    max-width: 225px;
+    font-size: 14px;
   }
 
   .flip-action span:first-child {
     display: none;
   }
 
+  .action-arrow {
+    width: 29px;
+    height: 29px;
+  }
+
+  /* BACK */
   .card-back {
-    padding: 22px;
+    padding: 20px;
+  }
+
+  .back-content {
+    margin-top: 24px;
   }
 
   .back-title {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .back-description {
     font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .details {
+    margin-top: 18px;
+  }
+
+  .detail-row {
+    padding: 8px 0;
   }
 
   .section-footer {
