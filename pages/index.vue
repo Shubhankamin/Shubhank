@@ -49,15 +49,18 @@
     </div>
 
     <section id="hero" class="reveal-section">
-      <Hero class="mt-10 mt-md-0" />
+      <!-- <Hero class="mt-10 mt-md-0" /> -->
+      <HeroNew class="mt-10 mt-md-0" />
+      <!-- <New_Hero_1 class="mt-10 mt-md-0" /> -->
     </section>
 
     <section id="work" class="reveal-section">
-      <Projects />
+      <!-- <Projects /> -->
+      <Projects-2 />
     </section>
 
     <section id="specialize" class="reveal-section">
-      <Specialize />
+      <SpecializeNew />
     </section>
 
     <section id="skills" class="reveal-section">
