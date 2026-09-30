@@ -31,8 +31,12 @@
               skills, and taking on creative challenges.
             </p>
 
-            <NuxtLink to="/about" class="link pointer">
-              <p class="link mt-md-10 my-5 manrope-regular-h5">More About Me</p>
+            <NuxtLink to="/about-new" class="about-peek">
+              <span class="peek-line"></span>
+
+              <span class="peek-text"> THERE'S MORE </span>
+
+              <span class="peek-arrow">↗</span>
             </NuxtLink>
           </v-col>
         </v-row>
@@ -61,9 +65,6 @@
   width: 100%;
 } */
 
-
-
-
 .heading {
   text-transform: uppercase;
   line-height: 0.95;
@@ -78,9 +79,9 @@
 
   backdrop-filter: blur(10px);
 
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
   overflow: hidden;
 }
@@ -121,7 +122,7 @@
 
   background: radial-gradient(
     circle,
-    rgba(59,130,246,0.08),
+    rgba(59, 130, 246, 0.08),
     transparent 70%
   );
 
@@ -180,4 +181,45 @@
   line-height: 1.4;
 }
 
+.about-peek {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 45px;
+
+  color: #d3f576;
+  text-decoration: none;
+
+  font-size: 13px;
+  letter-spacing: 2px;
+
+  transition: 0.3s ease;
+}
+
+.peek-line {
+  width: 35px;
+  height: 1px;
+  background: #d3f576;
+
+  transition: width 0.4s ease;
+}
+
+.peek-arrow {
+  font-size: 18px;
+
+  transition: transform 0.4s ease;
+}
+
+.about-peek:hover .peek-line {
+  width: 55px;
+}
+
+.about-peek:hover .peek-arrow {
+  transform: translate(5px, -5px);
+}
+
+.about-peek:hover {
+  opacity: 0.8;
+}
 </style>

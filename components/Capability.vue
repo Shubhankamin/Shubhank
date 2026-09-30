@@ -76,7 +76,6 @@ const skills = [
   width: 100%;
 } */
 
-
 /* .main {
   position: relative;
 
@@ -131,7 +130,7 @@ const skills = [
 /* TEXT */
 
 .manrope-regular-h5 {
-  color: rgba(255,255,255,0.72);
+  color: rgba(255, 255, 255, 0.72);
 
   line-height: 1.9;
 
@@ -147,14 +146,11 @@ const skills = [
 
   border-radius: 999px;
 
-  background:
-    rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
 
-  border:
-    1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-  backdrop-filter:
-    blur(12px);
+  backdrop-filter: blur(12px);
 
   overflow: hidden;
 
@@ -176,12 +172,11 @@ const skills = [
   top: -50px;
   right: -50px;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(211,245,118,0.12),
-      transparent 70%
-    );
+  background: radial-gradient(
+    circle,
+    rgba(211, 245, 118, 0.12),
+    transparent 70%
+  );
 
   opacity: 0;
 
@@ -189,14 +184,11 @@ const skills = [
 }
 
 .skills:hover {
-  transform:
-    translateY(-4px);
+  transform: translateY(-4px);
 
-  border-color:
-    rgba(211,245,118,0.18);
+  border-color: rgba(211, 245, 118, 0.18);
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .skills:hover::before {
@@ -238,5 +230,4 @@ const skills = [
 .link {
   color: #d3f576;
 }
-
 </style>
