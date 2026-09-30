@@ -43,7 +43,8 @@
       <span class="particle particle-2"></span>
       <span class="particle particle-3"></span>
     </div>
-    <Nav />
+    <!-- <Nav /> -->
+     <NewNav />
     <div class="d-none d-md-block" id="reveal">
       <Reveal />
     </div>

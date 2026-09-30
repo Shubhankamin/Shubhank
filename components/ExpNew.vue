@@ -386,7 +386,7 @@ const experiences = [
   color: rgba(255, 255, 255, 0.32);
 
   font-family: "Manrope", sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 
   letter-spacing: 0.14em;
@@ -476,7 +476,7 @@ const experiences = [
   color: rgba(255, 255, 255, 0.43);
 
   font-family: "Manrope", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 
   line-height: 1.7;
 }
@@ -499,7 +499,7 @@ const experiences = [
   color: rgba(255, 255, 255, 0.35);
 
   font-family: "Manrope", sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 
   letter-spacing: 0.08em;
