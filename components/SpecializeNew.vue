@@ -71,7 +71,7 @@
                   <div class="image-fade"></div>
 
                   <!-- Minimal image label -->
-                  <div class="image-label">0{{ index + 1 }}</div>
+                 <!-- <div class="image-label">0{{ index + 1 }}</div>-->
                 </div>
 
                 <!-- Content -->
@@ -715,7 +715,7 @@ function handleView(card) {
 
   display: block;
 
-  object-fit: contain;
+  object-fit: cover;
 
   object-position: center;
 
