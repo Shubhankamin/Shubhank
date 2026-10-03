@@ -2,19 +2,28 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 export default defineNuxtConfig({
   css: ["vuetify/styles", "@/assets/css/style.css"],
-  build: { transpile: ["vuetify"] },
+
+  build: {
+    transpile: ["vuetify"],
+  },
+
   modules: ["nuxt-aos", "nuxt-simple-sitemap", "@nuxtjs/robots"],
 
   sitemap: {},
 
   vite: {
-    vue: { template: { transformAssetUrls } },
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
     plugins: [vuetify({ autoImport: true })],
   },
 
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE,
+      googleAnalyticsId: "G-TG3C1MXG0X",
     },
   },
 
